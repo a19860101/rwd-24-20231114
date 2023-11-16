@@ -7,7 +7,7 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         @import url('style.css');
-        h2 {
+        p {
             color: crimson;
         }
         .abc{
@@ -31,6 +31,10 @@
         1. 標籤tag
         2. 類別class
         3. ID (只可使用一次)
+
+        CSS 權重 specificity
+        影響的範圍越少，權重越重，越優先套用
+        嵌入式 > id > class > tag
      -->
     <h1 style="color:orange;">HELLO CSS</h1>
     <h2>HELLO CSS</h2>
@@ -39,7 +43,7 @@
     <p class="abc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti necessitatibus numquam assumenda tenetur culpa non excepturi possimus dignissimos at cumque laboriosam, voluptas id, magnam quae? Amet reiciendis iusto eveniet corrupti.
     </p>
-    <p id="xyz">
+    <p id="xyz" class="abc" style="color: blue">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, rem aperiam? Vero molestiae tempore sapiente fuga doloribus aliquid, veritatis voluptatem perferendis harum inventore nemo a esse dicta qui libero officia.
     </p>
     <p class="abc">
