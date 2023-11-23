@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         .box {
             width: 200px;
             /* height: 200px; */
-            background-color: #98a;
+            /* background-color: #98a; */
             text-align: justify;
 
             /* overflow: hidden; */
@@ -18,7 +21,7 @@
             /* overflow-y: scroll; */
 
             /* padding 內距 */
-            /* padding: 30px; */
+            padding: 30px;
 
             /* padding-left: 0px; */
             /* padding-right: 30px; */
@@ -62,10 +65,12 @@
 
             /* margin-inline: auto; */
 
-            display:inline;
-            /* border:10px solid #f00; */
+            /* display:inline; */
+            border:10px solid #f00;
 
 
+            /* box-sizing:border-box */
+            /* content-box , border-box */
         }
         /* 
             區塊block vs 行內inline
@@ -75,7 +80,13 @@
 
             ->行內元素沒有width、height並且上下padding、margin、border有問題，儘量不要使用
 
+
+            預設狀態下
+            實際寬度 = width + padding + border
+
         */
+
+        
     </style>
 </head>
 <body>
