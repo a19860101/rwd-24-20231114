@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .col {
+            flex: 1 0 400px;
+            padding: 15px;
+        }
+        .col:nth-of-type(1){
+            order:2;
+        }
+        .col:nth-of-type(2){
+            order:3;
+        }
+        .col:nth-of-type(3){
+            order:1;
+        }
+        img {
+            width: 100%;
+        }
+        /* 自然排序優先於人工排序 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h2>title 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione deleniti delectus consequuntur odit quae dicta debitis ducimus voluptatibus ut amet, perspiciatis placeat accusantium officiis facilis error incidunt? Voluptate, eos atque.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione deleniti delectus consequuntur odit quae dicta debitis ducimus voluptatibus ut amet, perspiciatis placeat accusantium officiis facilis error incidunt? Voluptate, eos atque.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione deleniti delectus consequuntur odit quae dicta debitis ducimus voluptatibus ut amet, perspiciatis placeat accusantium officiis facilis error incidunt? Voluptate, eos atque.
+            </p>
+        </div>
+       
+    </div>
+</body>
+</html>
