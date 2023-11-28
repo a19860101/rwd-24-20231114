@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+        aside {
+            width: 300px;
+            /* flex: 1 1 300px; */
+            background-color: #ccc;
+        }
+        main {
+            width: 900px;
+            /* flex: 1 1 900px; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            /* width: calc(100% / 4); */
+            flex:1 0 200px;
+            padding: 15px;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+            </ul>
+        </aside>
+        <main>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+            <div class="col">
+                <img src="https://picsum.photos/id/98/400" alt="">
+            </div>
+        </main>
+    </div>
+</body>
+</html>
