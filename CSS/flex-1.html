@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         .container {
             width: 1200px;
-            background-color: #eee;
+            background-color: #ccc;
             margin-inline: auto;
             display: flex;
             flex-wrap: wrap ;
+            flex-direction: row;
+            /* row, column, row-reverse, column-reverse */
+            align-items: baseline;
+            /* start, end, center, stretch, baseline */
         }
         .col {
-            width: 400px;
+            width: calc(100% / 3);
+            padding: 15px;
         }
         .col:nth-of-type(even){
             background-color: #fa0;
@@ -26,38 +34,23 @@
 <body>
     <div class="container">
         <div class="col">
-            <h2>title</h2>
+            <h2>title 1</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
             </p>
         </div>
         <div class="col">
-            <h2>title</h2>
+            <h2>title 2</h2>
             <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
             </p>
         </div>
         <div class="col">
-            <h2>title</h2>
+            <h2>title 3</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
-            </p>
-        </div>
-        <div class="col">
-            <h2>title</h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
-            </p>
-        </div>
-        <div class="col">
-            <h2>title</h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
-            </p>
-        </div>
-        <div class="col">
-            <h2>title</h2>
-            <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aperiam ullam modi illo, placeat eveniet reprehenderit itaque molestiae exercitationem, magnam maxime officiis blanditiis atque ratione. Modi autem quaerat quo dolorem.
             </p>
         </div>
