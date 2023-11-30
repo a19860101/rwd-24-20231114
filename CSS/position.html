@@ -36,8 +36,22 @@
             height: 100px;
             background-color: #545;
             position: absolute;
-            right: 50px;
-            bottom: 50px;
+            /* right: 0;
+            bottom: 0;
+            top: 0;
+            left: 0; */
+            inset: 0;
+            margin: auto;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            z-index: 99;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -55,5 +69,6 @@
         <div class="box2"></div>
     </div>
     <h1>hello</h1>
+    <div class="circle"></div>
 </body>
 </html>
