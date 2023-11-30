@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            height: 3000px;
+            background-image: linear-gradient(#f00,#00f);
+        }
         .container {
             width: 600px;
             height: 400px;
@@ -53,6 +57,14 @@
             z-index: 99;
             border-radius: 50%;
         }
+        .fixed {
+            width: 100px;
+            height: 100px;
+            background-color: #00aa2d;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,5 +82,6 @@
     </div>
     <h1>hello</h1>
     <div class="circle"></div>
+    <div class="fixed"></div>
 </body>
 </html>
