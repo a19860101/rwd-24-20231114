@@ -22,6 +22,23 @@
             position: relative;
             z-index: 19;
         }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #098;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 60;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #545;
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+        }
     </style>
 </head>
 <body>
@@ -33,7 +50,10 @@
         4. 固定 fixed
         5. 黏性 sticky
      -->
-    <div class="container"></div>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box2"></div>
+    </div>
     <h1>hello</h1>
 </body>
 </html>
