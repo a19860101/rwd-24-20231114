@@ -34,6 +34,28 @@
             /* display: inline-block; */
             /* padding-inline: 10px; */
         }
+        header {
+            width: 100%;
+            height: 600px;
+            background-color: #999;
+            position: relative;
+        }
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* background-size:cover */
+        }
+        .header-content {
+            width: 600px;
+            height: 250px;
+            background-color: #ccc;
+            position: absolute;
+            inset:0;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -47,5 +69,14 @@
             <a href="#" class="nav-link">Link</a>
         </div>
     </nav>
+    <header>
+        <img src="https://picsum.photos/id/89/1600/800" alt="">
+        <div class="header-content">
+            <h1>HELLO</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut fugit adipisci quidem eligendi id facere reiciendis, laboriosam repudiandae aspernatur odio sint at saepe perferendis atque, accusantium consectetur ipsum. Doloribus, quas.
+            </p>
+        </div>
+    </header>
 </body>
 </html>
