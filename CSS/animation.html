@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #098;
+            position: absolute;
+            inset:0;
+            margin: auto;
+
+            /* animation: a1 2s; */
+            animation-name:a1;
+            animation-duration:1s;
+            animation-delay:0;
+            animation-direction:alternate;
+            /* normal, reverse, alternate, alternate-reverse*/
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+
+        }
+        @keyframes a1 {
+            from {transform: rotate(0deg)}
+            to {transform: rotate(180deg)}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">asdfasd</div>
+</body>
+</html>
