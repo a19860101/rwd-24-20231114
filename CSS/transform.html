@@ -10,13 +10,17 @@
             height: 100px;
             background-color: #098;
 
-            transform: skewY(20deg);
+            transform: perspective(800px)scale(2)rotate(45deg);
             /* 
                 scale(),scaleX(),scaleY(),scaleZ()
                 translate(),translateX(),translateY(),translateZ()
                 rotate(),rotateX(),rotateY(),rotateZ()
                 skew(),skewX(),skewY()
+                perspective()
             */
+            position: absolute;
+            inset:0;
+            margin: auto;
         }
     </style>
 </head>
