@@ -10,7 +10,7 @@
             height: 100px;
             background-color: #098;
 
-            transform: perspective(800px)scale(2)rotate(45deg);
+            /* transform: perspective(800px)scale(2)rotate(45deg); */
             /* 
                 scale(),scaleX(),scaleY(),scaleZ()
                 translate(),translateX(),translateY(),translateZ()
@@ -18,9 +18,21 @@
                 skew(),skewX(),skewY()
                 perspective()
             */
+            /* 
+            新寫法，但跟transform比還是有落差
+            scale: 2 1;
+            rotate: 45deg;
+            translate: 100px 200px; 
+            
+            */
             position: absolute;
             inset:0;
             margin: auto;
+        }
+        .box:hover {
+            /* rotate: 45deg; */
+            /* scale: 2; */
+            transform: rotate(45deg)scale(2);
         }
     </style>
 </head>
