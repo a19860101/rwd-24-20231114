@@ -9,24 +9,40 @@
             width: 100px;
             height: 100px;
             background-color: #098;
-            position: absolute;
-            inset:0;
-            margin: auto;
+            /* position: absolute; */
+            /* inset:0; */
+            /* margin: auto; */
 
-            /* animation: a1 2s; */
-            animation-name:a1;
-            animation-duration:1s;
-            animation-delay:0;
-            animation-direction:alternate;
+            animation: a2 3s forwards;
+            /* animation-name:a1; */
+            /* animation-duration:1s; */
+            /* animation-delay:0; */
+            /* animation-direction:alternate; */
             /* normal, reverse, alternate, alternate-reverse*/
-            animation-fill-mode: forwards;
-            animation-iteration-count: 1;
-            animation-timing-function: ease;
+            /* animation-fill-mode: forwards; */
+            /* animation-iteration-count: 1; */
+            /* animation-timing-function: ease; */
 
         }
         @keyframes a1 {
             from {transform: rotate(0deg)}
             to {transform: rotate(180deg)}
+        }
+        @keyframes fade-in {
+            from {
+                opacity:0;
+            }
+        }
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
+        }
+        @keyframes a2 {
+            0% {}
+            33% {transform: translate(300px,0);}
+            66% {transform: translate(300px,600px);}
+            100% {transform: translate(600px,300px);}
         }
     </style>
 </head>
