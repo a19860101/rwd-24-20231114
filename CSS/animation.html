@@ -13,7 +13,7 @@
             /* inset:0; */
             /* margin: auto; */
 
-            animation: a2 3s forwards;
+            animation: s1 3s infinite forwards steps(16);
             /* animation-name:a1; */
             /* animation-duration:1s; */
             /* animation-delay:0; */
@@ -23,6 +23,12 @@
             /* animation-iteration-count: 1; */
             /* animation-timing-function: ease; */
 
+        }
+        @keyframes s1  {
+            to {
+                /* transform: translate(600px,600px); */
+                rotate: 360deg
+            }
         }
         @keyframes a1 {
             from {transform: rotate(0deg)}
