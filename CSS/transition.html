@@ -13,15 +13,16 @@
             inset:0;
             margin: auto;
 
-            /* transition:2200ms; */
-            transition-property: transform;
-            transition-duration: 1000ms;
-            transition-delay:1s;
-            transition-timing-function: linear;
+            transition:transform 1s 0s ,background-color 1s 1s;
+            /* transition-property: transform, background-color; */
+            /* transition-duration: 1000ms; */
+            /* transition-delay:0s,1s; */
+            /* transition-timing-function: ease; */
             /* ease, ease-in, ease-out, linear */
         }
         .box:hover {
             transform: rotate(360deg)scale(2);
+            background-color: #fa0;
         }
     </style>
 </head>
