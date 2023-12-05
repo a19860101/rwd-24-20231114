@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #098;
+            position: absolute;
+            inset:0;
+            margin: auto;
+
+            /* transition:2200ms; */
+            transition-property: transform;
+            transition-duration: 1000ms;
+            transition-delay:1s;
+            transition-timing-function: linear;
+            /* ease, ease-in, ease-out, linear */
+        }
+        .box:hover {
+            transform: rotate(360deg)scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">asdfasd</div>
+</body>
+</html>
