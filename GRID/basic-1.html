@@ -8,29 +8,41 @@
         .container {
             width: 100%;
             display: grid;
-            grid-template-columns: 200px 200px 200px;
-            grid-template-rows: 100px 100px 100px 100px
+            /* grid-template-columns: 200px 200px 200px; */
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: 100px 100px 100px 100px;
         }
         .grid {
-            background-image: linear-gradient(to top left,#9e7d30,#ffcd16);
+            /* background-image: linear-gradient(to top left,#9e7d30,#ffcd16); */
+            background-color: #fa0;
+            border: 1px solid #000;
+        }
+        .grid-4 {
+            background-color: #098;
+            /* grid-column: 1 / 3; */
+            /* grid-row: 3 / 5; */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 5;
         }
     </style>
 </head>
 <body>
-    <!-- .grid.gird-${Grid $}*12 -->
+    <!-- .grid.grid-${Grid $}*12 -->
     <div class="container">
-        <div class="grid gird-1">Grid 1</div>
-        <div class="grid gird-2">Grid 2</div>
-        <div class="grid gird-3">Grid 3</div>
-        <div class="grid gird-4">Grid 4</div>
-        <div class="grid gird-5">Grid 5</div>
-        <div class="grid gird-6">Grid 6</div>
-        <div class="grid gird-7">Grid 7</div>
-        <div class="grid gird-8">Grid 8</div>
-        <div class="grid gird-9">Grid 9</div>
-        <div class="grid gird-10">Grid 10</div>
-        <div class="grid gird-11">Grid 11</div>
-        <div class="grid gird-12">Grid 12</div>
+        <div class="grid grid-1">Grid 1</div>
+        <div class="grid grid-2">Grid 2</div>
+        <div class="grid grid-3">Grid 3</div>
+        <div class="grid grid-4">Grid 4</div>
+        <div class="grid grid-5">Grid 5</div>
+        <div class="grid grid-6">Grid 6</div>
+        <div class="grid grid-7">Grid 7</div>
+        <div class="grid grid-8">Grid 8</div>
+        <div class="grid grid-9">Grid 9</div>
+        <div class="grid grid-10">Grid 10</div>
+        <div class="grid grid-11">Grid 11</div>
+        <div class="grid grid-12">Grid 12</div>
     </div>
 </body>
 </html>
