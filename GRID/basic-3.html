@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main {
+            /* width: min(1200px,90%); */
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 100px 100px repeat(4, 1fr);
+            grid-template-areas: 
+                "header header header header header header"
+                "nav nav nav nav nav nav"
+                "aside aside aside aside aside aside"
+                "section section section section section section"
+                "footer footer footer footer footer footer"
+
+            ;
+        }
+        main > * {
+            padding: 15px;
+        }
+        nav {
+            background-color: #b9b9b9;
+            grid-area: nav;
+        }
+        header {
+            /* background-color: #098; */
+            background: url('https://picsum.photos/id/22/1600/1000') no-repeat fixed center / cover;
+            grid-area: header;
+            height: 400px;
+        }
+        aside {
+            background-color: #ff4d88;
+            grid-area:aside;
+        }
+        section {
+            background-color: #fa0;
+            grid-area: section;
+        }
+        footer {
+            background-color: #aaa;
+            grid-area: footer;
+        }
+        @media(min-width: 600px){
+            main {
+                grid-template-areas: 
+                "nav nav nav nav nav nav"
+                "header header header header header header"
+                "aside aside section section section section"
+                "footer footer footer footer footer footer"
+
+            ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>Nav</nav>
+        <header>Header</header>
+        <aside>Aside
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </aside>
+        <section>Section
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero harum nam sunt qui doloribus dolorum optio facere atque molestiae, veniam magnam nisi animi corporis id delectus impedit odio voluptatum aspernatur?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero harum nam sunt qui doloribus dolorum optio facere atque molestiae, veniam magnam nisi animi corporis id delectus impedit odio voluptatum aspernatur?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero harum nam sunt qui doloribus dolorum optio facere atque molestiae, veniam magnam nisi animi corporis id delectus impedit odio voluptatum aspernatur?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero harum nam sunt qui doloribus dolorum optio facere atque molestiae, veniam magnam nisi animi corporis id delectus impedit odio voluptatum aspernatur?
+            </p>
+        </section>
+        <footer>Footer</footer>
+    </main>
+</body>
+</html>
