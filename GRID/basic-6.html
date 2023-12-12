@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 100px;
+            grid-auto-flow: dense;
+            gap: 10px;
+        }
+        .grid {
+            background-color: #fa0;
+            padding: 15px;
+        }
+        .grid:nth-of-type(3n){
+            background-color: #37bffd;
+            grid-column: span 3;
+        }
+        .grid:nth-of-type(4n){
+            background-color: #aeff67;
+            grid-column: span 2;
+            grid-row: span 4
+        }
+        .grid:nth-of-type(5n){
+            background-color: #7c0394;
+            grid-column: span 3;
+            grid-row: span 2
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+        <div class="grid"></div>
+    </div>
+</body>
+</html>
