@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         .container {
-            width: 1200px;
-            height: 100vh;
+            max-width: 1200px;
+            /* height: 100vh; */
             background-color: #ccc;
             margin-inline: auto;
             display: grid;
-
-            place-items:  center;
+            grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+            grid-auto-rows: 500px;
+            gap:10px;
+            align-items: start;
+            /* start, end, center, stretch */
+            justify-items: start;
+            /* start, end, center, stretch */
 
             /* 
             justify-content: ;
@@ -30,15 +40,74 @@
             */
         }
         .grid {
-            width: 200px;
-            height: 200px;  
             background-color: #a98;
         }
-    </style>
+        
+        .grid:nth-of-type(even){
+            background-color: #fa0;
+        }
+        .grid:nth-of-type(odd){
+            background-color: #098;
+        }    
+        .grid:first-of-type{
+            background-color: crimson;
+            grid-column: 1 / span 3;
+        }
+        .grid-content {
+            width: 50%;
+        }
+        </style>
 </head>
 <body>
     <div class="container">
-        <div class="grid"></div>
+        <div class="grid">
+            <div class="grid-content">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
+                </p>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="grid-content">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
+                </p>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="grid-content">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
+                </p>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="grid-content">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
+                </p>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="grid-content">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
+                </p>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="grid-content">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
