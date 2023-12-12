@@ -11,6 +11,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        img {
+            width: 100%;
+        }
         .header-hero {
             background-image: url('https://picsum.photos/id/91/800/600');
             background-size: cover;
@@ -76,6 +79,20 @@
             background-color: #fa0;
             padding: 15px;
         }
+        #features {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            /* grid-template-columns:  500px 1fr; */
+            align-items: center;
+        }
+        /* .feature:first-of-type {
+            grid-column: -1;
+        }
+        .feature:last-of-type {
+            grid-column: 1; 
+            grid-row: 1;
+        } */
     </style>
 </head>
 <body>
@@ -128,6 +145,20 @@
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container" id="features">
+            <div class="feature">
+                <img src="https://picsum.photos/id/87/800/600" alt="">
+            </div>
+            <div class="feature">
+                <h2>Feature</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, vero. Nemo doloremque adipisci consequatur, ex et laborum sint maiores unde fugit expedita fugiat, ipsa libero molestiae voluptates quas ratione vel.
+                </p>
+                <a href="#">Link</a>
             </div>
         </div>
     </section>
