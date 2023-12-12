@@ -14,20 +14,55 @@
             background-image: url('https://picsum.photos/id/91/800/600');
             background-size: cover;
             background-repeat: no-repeat;
-            background-attachment: fixed;
         }
-        .header-sale {
+        .sale-1 {
             background-image: url('https://picsum.photos/id/21/800/600');
             background-size: cover;
             background-repeat: no-repeat;
-            background-attachment: fixed;
         }
-        .header-sale {
+        .sale-2 {
             background-image: url('https://picsum.photos/id/31/800/600');
             background-size: cover;
             background-repeat: no-repeat;
-            background-attachment: fixed;
         }
+        header {
+            width: min(1200px,90%);
+            margin-inline: auto;
+            display: grid;
+            gap:15px;
+            grid-template-areas:
+                "hero hero sale1"
+                "hero hero sale2"
+        }
+        .header-hero {
+            grid-area: hero;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-hero > * ,
+        .header-sale > *
+        {
+            background-color: #ffdb6f;
+            padding: 10px;
+        }
+        .sale-1 {
+            grid-area: sale1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .sale-2 {
+            grid-area: sale2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
@@ -38,13 +73,13 @@
                 Lorem, ipsum dolor.
             </p>
         </div>
-        <div class="header-sale">
+        <div class="header-sale sale-1">
             <h2>Sale</h2>
             <p>
                 Lorem, ipsum dolor.
             </p>
         </div>
-        <div class="header-sale">
+        <div class="header-sale sale-2">
             <h2>Sale</h2>
             <p>
                 Lorem, ipsum dolor.
