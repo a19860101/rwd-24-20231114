@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -26,13 +27,16 @@
             background-repeat: no-repeat;
         }
         header {
-            width: min(1200px,90%);
-            margin-inline: auto;
             display: grid;
             gap:15px;
             grid-template-areas:
                 "hero hero sale1"
                 "hero hero sale2"
+        }
+        .container {
+            width: min(1200px,90%);
+            margin-inline: auto;
+
         }
         .header-hero {
             grid-area: hero;
@@ -62,11 +66,20 @@
             align-items: center;
             justify-content: center;
         }
-
+        #about {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+            text-align: center;
+        }
+        #about > * {
+            background-color: #fa0;
+            padding: 15px;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header class="container">
         <div class="header-hero">
             <h1>Welcome My Shop!</h1>
             <p>
@@ -86,5 +99,37 @@
             </p>
         </div>
     </header>
+    <section>
+        <div class="container" id="about">
+            <div class="about-item">
+                <div><i class="fa-solid fa-star fa-2x"></i></div>
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="about-item">
+                <div><i class="fa-solid fa-cloud fa-2x"></i></div>
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="about-item">
+                <div><i class="fa-solid fa-face-smile fa-2x"></i></div>
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="about-item">
+                <div><i class="fa-solid fa-bell fa-2x"></i></div>
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
