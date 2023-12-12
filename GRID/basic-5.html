@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,112 +11,67 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         .container {
-            max-width: 1200px;
-            /* height: 500px; */
-            background-color: #ccc;
-            margin-inline: auto;
+            width: 1200px;
+            height: 800px;
             display: grid;
-            /* grid-template-columns: repeat(auto-fill,minmax(200px, 1fr)); */
             grid-template-columns: repeat(3, 200px);
-            grid-template-rows: repeat(5,400px);
-            /* grid-auto-rows: 100px; */
-            gap:10px;
-            align-items: start;
-            /* start, end, center, stretch */
-            justify-items: center;
-            /* start, end, center, stretch */
+            grid-template-rows: repeat(3, 200px);
+            background-color: #ccc;
+            gap: 10px;
+
+            /* align-content: center; */
+            /* justify-content: center; */
+
+            place-content: center;
+
+            /* align-items:center; */
+            /* justify-items:center; */
             place-items: center;
 
-            align-content: center;
-            /* start, end, center, stretch, space-between, space-around, space-evenly */   
 
-            justify-content: center;
-            /* start, end, center, stretch, space-between, space-around, space-evenly */
-            /* place-content:; */
         }
+
         .grid {
-            background-color: #a98;
+            /*   width: 30px; */
+            /*   height: 30px; */
+        }
 
-            height: 300px;
-        }
-        
-        .grid:nth-of-type(even){
-            background-color: #fa0;
-        }
-        .grid:nth-of-type(odd){
+        .grid:nth-of-type(odd) {
             background-color: #098;
-        }    
-        .grid:first-of-type{
-            background-color: crimson;
-            /* grid-column: 1 / span 3; */
         }
+
+        .grid:nth-of-type(even) {
+            background-color: #912;
+        }
+
         .grid:last-of-type {
-            background-color: pink;
-            grid-column: 1 / span 3;
-            /* height: 100px; */
-            /* justify-self: end; */
-            /* align-self: end; */
-            /* place-self:; */
+            background-color: #fa0;
+            justify-self: center;
+            align-self: center;
         }
-        .grid-content {
-            /* width: 50%; */
-            width: 100%;
-            height: 50px;
-            background-color: #eee;
+        .grid:nth-of-type(5) {
+            background-color: #fa0;
+            /* justify-self: center; */
+            /* align-self: center; */
+            place-self: start;
         }
-        </style>
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="grid">
-            <div class="grid-content">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
-                </p>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid-content">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
-                </p>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid-content">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
-                </p>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid-content">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
-                </p>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid-content">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
-                </p>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid-content">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, adipisci.
-                </p>
-            </div>
-        </div>
+        <div class="grid">1</div>
+        <div class="grid">2</div>
+        <div class="grid">3</div>
+        <div class="grid">4</div>
+        <div class="grid">5</div>
+        <div class="grid">6</div>
+        <div class="grid">7</div>
+        <div class="grid">8</div>
+        <div class="grid">9</div>
     </div>
 </body>
+
 </html>
