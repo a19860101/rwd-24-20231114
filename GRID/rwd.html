@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,37 +12,48 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         img {
             width: 100%;
             display: block;
+        }
+        main {
+            display: grid;
+            /* grid-template-columns: 1200px; */
+            gap: 15px;
         }
         .header-hero {
             background-image: url('https://picsum.photos/id/91/800/600');
             background-size: cover;
             background-repeat: no-repeat;
         }
+
         .sale-1 {
             background-image: url('https://picsum.photos/id/21/800/600');
             background-size: cover;
             background-repeat: no-repeat;
         }
+
         .sale-2 {
             background-image: url('https://picsum.photos/id/31/800/600');
             background-size: cover;
             background-repeat: no-repeat;
         }
+
         header {
             display: grid;
-            gap:15px;
+            gap: 15px;
             grid-template-areas:
                 "hero hero sale1"
                 "hero hero sale2"
         }
+
         .container {
-            width: min(1200px,90%);
+            width: min(1200px, 90%);
             margin-inline: auto;
 
         }
+
         .header-hero {
             grid-area: hero;
             height: 400px;
@@ -50,12 +62,13 @@
             align-items: center;
             justify-content: center;
         }
-        .header-hero > * ,
-        .header-sale > *
-        {
+
+        .header-hero>*,
+        .header-sale>* {
             background-color: #ffdb6f;
             padding: 10px;
         }
+
         .sale-1 {
             grid-area: sale1;
             display: flex;
@@ -63,6 +76,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .sale-2 {
             grid-area: sale2;
             display: flex;
@@ -70,16 +84,19 @@
             align-items: center;
             justify-content: center;
         }
+
         #about {
             display: grid;
             gap: 15px;
             grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
             text-align: center;
         }
-        #about > * {
+
+        #about>* {
             background-color: #fa0;
             padding: 15px;
         }
+
         #features {
             display: grid;
             gap: 15px;
@@ -87,6 +104,7 @@
             /* grid-template-columns:  500px 1fr; */
             align-items: center;
         }
+
         /* .feature:first-of-type {
             grid-column: -1;
         }
@@ -98,135 +116,150 @@
             display: grid;
             gap: 10px;
             /* grid-template-columns: repeat(auto-fit, minmax(285px,1fr)); */
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 300px;
             grid-auto-flow: dense;
         }
-       .folio {
+
+        .folio {
             /* aspect-ratio: 1/1; */
             background-color: #fa0;
         }
+
         .folio-xl {
             grid-column: span 2;
             grid-row: span 2;
         }
+
         .folio-v {
             grid-row: span 2;
         }
+
         .folio-h {
             grid-column: span 2;
         }
+
         .folio img {
             object-fit: cover;
             height: 100%;
         }
     </style>
 </head>
+
 <body>
-    <header class="container">
-        <div class="header-hero">
-            <h1>Welcome My Shop!</h1>
-            <p>
-                Lorem, ipsum dolor.
-            </p>
-        </div>
-        <div class="header-sale sale-1">
-            <h2>Sale</h2>
-            <p>
-                Lorem, ipsum dolor.
-            </p>
-        </div>
-        <div class="header-sale sale-2">
-            <h2>Sale</h2>
-            <p>
-                Lorem, ipsum dolor.
-            </p>
-        </div>
-    </header>
-    <section>
-        <div class="container" id="about">
-            <div class="about-item">
-                <div><i class="fa-solid fa-star fa-2x"></i></div>
-                <h3>title</h3>
+    <main>
+        <header class="container">
+            <div class="header-hero">
+                <h1>Welcome My Shop!</h1>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor.
                 </p>
             </div>
-            <div class="about-item">
-                <div><i class="fa-solid fa-cloud fa-2x"></i></div>
-                <h3>title</h3>
+            <div class="header-sale sale-1">
+                <h2>Sale</h2>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor.
                 </p>
             </div>
-            <div class="about-item">
-                <div><i class="fa-solid fa-face-smile fa-2x"></i></div>
-                <h3>title</h3>
+            <div class="header-sale sale-2">
+                <h2>Sale</h2>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor.
                 </p>
             </div>
-            <div class="about-item">
-                <div><i class="fa-solid fa-bell fa-2x"></i></div>
-                <h3>title</h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                </p>
+        </header>
+        <section>
+            <div class="container" id="about">
+                <div class="about-item">
+                    <div><i class="fa-solid fa-star fa-2x"></i></div>
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="about-item">
+                    <div><i class="fa-solid fa-cloud fa-2x"></i></div>
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="about-item">
+                    <div><i class="fa-solid fa-face-smile fa-2x"></i></div>
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="about-item">
+                    <div><i class="fa-solid fa-bell fa-2x"></i></div>
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <div class="container" id="features">
-            <div class="feature">
-                <img src="https://picsum.photos/id/87/800/600" alt="">
+        </section>
+        <section>
+            <div class="container" id="features">
+                <div class="feature">
+                    <img src="https://picsum.photos/id/87/800/600" alt="">
+                </div>
+                <div class="feature">
+                    <h2>Feature</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, vero. Nemo doloremque adipisci
+                        consequatur, ex et laborum sint maiores unde fugit expedita fugiat, ipsa libero molestiae
+                        voluptates quas ratione vel.
+                    </p>
+                    <a href="#">Link</a>
+                </div>
             </div>
-            <div class="feature">
-                <h2>Feature</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, vero. Nemo doloremque adipisci consequatur, ex et laborum sint maiores unde fugit expedita fugiat, ipsa libero molestiae voluptates quas ratione vel.
-                </p>
-                <a href="#">Link</a>
+        </section>
+        <section>
+            <div class="container" id="folios">
+                <div class="folio folio-h">
+                    <img src="https://picsum.photos/id/91/800/600" alt="">
+                </div>
+                <div class="folio folio-xl">
+                    <img src="https://picsum.photos/id/81/800/600" alt="">
+                </div>
+                <div class="folio folio-v">
+                    <img src="https://picsum.photos/id/71/800/600" alt="">
+                </div>
+                <div class="folio">
+                    <img src="https://picsum.photos/id/61/800/600" alt="">
+                </div>
+                <div class="folio folio-xl">
+                    <img src="https://picsum.photos/id/51/800/600" alt="">
+                </div>
+                <div class="folio folio-v">
+                    <img src="https://picsum.photos/id/41/800/600" alt="">
+                </div>
+                <div class="folio folio-h">
+                    <img src="https://picsum.photos/id/31/800/600" alt="">
+                </div>
+                <div class="folio folio-v">
+                    <img src="https://picsum.photos/id/21/800/600" alt="">
+                </div>
+                <div class="folio">
+                    <img src="https://picsum.photos/id/11/800/600" alt="">
+                </div>
+                <div class="folio">
+                    <img src="https://picsum.photos/id/93/800/600" alt="">
+                </div>
+                <div class="folio">
+                    <img src="https://picsum.photos/id/93/800/600" alt="">
+                </div>
+                <div class="folio">
+                    <img src="https://picsum.photos/id/95/800/600" alt="">
+                </div>
+                <div class="folio">
+                    <img src="https://picsum.photos/id/235/800/600" alt="">
+                </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <div class="container" id="folios">
-            <div class="folio folio-h">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio folio-xl">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio folio-v">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio folio-xl">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio folio-v">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio folio-h">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio folio-v">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-            <div class="folio">
-                <img src="https://picsum.photos/id/91/800/600" alt="">
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
+
 </html>
