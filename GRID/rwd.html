@@ -13,6 +13,7 @@
         }
         img {
             width: 100%;
+            display: block;
         }
         .header-hero {
             background-image: url('https://picsum.photos/id/91/800/600');
@@ -93,6 +94,18 @@
             grid-column: 1; 
             grid-row: 1;
         } */
+        #folios {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(285px,1fr));
+        }
+       .folio {
+            aspect-ratio: 1/1;
+        }
+        .folio img {
+            object-fit: cover;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -159,6 +172,46 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, vero. Nemo doloremque adipisci consequatur, ex et laborum sint maiores unde fugit expedita fugiat, ipsa libero molestiae voluptates quas ratione vel.
                 </p>
                 <a href="#">Link</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container" id="folios">
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
+            </div>
+            <div class="folio">
+                <img src="https://picsum.photos/id/91/800/600" alt="">
             </div>
         </div>
     </section>
