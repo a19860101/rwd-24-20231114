@@ -44,8 +44,22 @@
             display: grid;
             gap: 15px;
             grid-template-areas:
+                "hero hero hero hero"
+                "sale1 sale1 sale2 sale2";
+        }
+        @media(min-width:600px){
+            header {
+                grid-template-areas:
+                    "hero hero sale1"
+                    "hero hero sale2"
+            }
+        }
+        @media(min-width:1200px){
+            header {
+            grid-template-areas:
                 "hero hero sale1"
                 "hero hero sale2"
+            }
         }
 
         .container {
@@ -100,11 +114,15 @@
         #features {
             display: grid;
             gap: 15px;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             /* grid-template-columns:  500px 1fr; */
             align-items: center;
         }
-
+        @media(min-width: 800px){
+            #features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
         /* .feature:first-of-type {
             grid-column: -1;
         }
@@ -116,29 +134,67 @@
             display: grid;
             gap: 10px;
             /* grid-template-columns: repeat(auto-fit, minmax(285px,1fr)); */
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 300px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 200px;
             grid-auto-flow: dense;
         }
 
-        .folio {
-            /* aspect-ratio: 1/1; */
-            background-color: #fa0;
-        }
+
 
         .folio-xl {
-            grid-column: span 2;
-            grid-row: span 2;
+            grid-column: span 1;
+            grid-row: span 1;
         }
 
         .folio-v {
-            grid-row: span 2;
+            grid-row: span 1;
         }
 
         .folio-h {
             grid-column: span 2;
         }
+        @media(min-width:600px){
+            #folios {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 200px;
+            } 
 
+
+
+            .folio-xl {
+                grid-column: span 3;
+                grid-row: span 2;
+            }
+
+            .folio-v {
+                grid-row: span 2;
+            }
+
+            .folio-h {
+                grid-column: span 2;
+            }       
+        }
+        @media(min-width:1200px){
+            #folios {
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 300px;
+            }
+
+
+            .folio-xl {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .folio-v {
+                grid-row: span 2;
+            }
+
+            .folio-h {
+                grid-column: span 2;
+            }   
+
+        }
         .folio img {
             object-fit: cover;
             height: 100%;
