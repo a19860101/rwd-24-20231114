@@ -32,6 +32,23 @@
         console.log(x > 10 || y > 10); // OR
         console.log(!x); // NOT
 
+        // 指定運算子/賦值運算子
+        console.log(x = 9);
+        console.log(x += 9); // x = x + 9
+        console.log(x -= 9); // x = x - 9
+        console.log(x *= 9); // x = x * 9
+        console.log(x /= 9); // x = x / 9
+        console.log(x %= 9); // x = x % 9
+
+        // 三元運算子
+        let i = null;
+        let result = i < 0 ? 'success' : 'error' ;
+        console.log(result);
+
+        let q = i  ?? 'x';
+        console.log(q);
+        
+
     </script>
 </body>
 </html>
