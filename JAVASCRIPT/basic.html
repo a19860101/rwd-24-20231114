@@ -8,20 +8,34 @@
 <body>
     <script>
         // 定義變數
-        let a = 100;
-        console.log(a);
         var x = 99;
-        var x = 123
-        console.log(x);
+        let a = 100;
+        a = a+1;
+        // 定義常數
+        const z = 100;
         /* 
-            變數定義規範
+            變(常)數定義規範
             首字不可使用數字
             不可使用特殊符號，只可使用_
             大小寫有別
 
-            lev vs var
-            let不可重複宣告
+            let,const vs var
+            let,const不可重複宣告
+            const 不可重新賦值
+
         */
+        // 資料型別
+        // let i = 100; //number數值
+        // let i = 'hello'; //string字串
+        // let i = false; // boolean布林
+        // let i = undefined; // undefined未定義
+        // let i; // undefined未定義
+        // let i = null; // object物件
+        // let i = []; // array陣列,typeof為object物件
+        // let i = {}; //object
+        // let i = function(){} //function函式
+        let i = new Set; // object
+        console.log(typeof(i));
     </script>
 </body>
 </html>
