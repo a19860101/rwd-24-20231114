@@ -11,12 +11,61 @@
         // user.name = 'Max';
         // user.mail = 'max@gmail.com';
         // user.age = 23;
-        let user = {
-            name: 'Max',
-            mail: 'max@gmail.com',
-            age: 23
+        // let user = {
+        //     name: 'Max',
+        //     mail: 'max@gmail.com',
+        //     age: 23
+        // }
+
+        // let foods = [
+        //     {
+        //         id:1,
+        //         name: '牛肉麵',
+        //         price: '180'
+        //     },
+        //     {
+        //         id:2,
+        //         name: '滷肉飯',
+        //         price: '35'
+        //     },
+        //     {
+        //         id:3,
+        //         name: '排骨飯',
+        //         price: '120'
+        //     }
+        // ];
+        // for(let food of foods){
+        //     console.log(food.name);
+        //     console.log(food.price);
+
+        // }
+        let foods = {
+            title: '菜單',
+            datas:[
+                {
+                    id:1,
+                    name: '牛肉麵',
+                    price: '180'
+                },
+                {
+                    id:2,
+                    name: '滷肉飯',
+                    price: '35'
+                },
+                {
+                    id:3,
+                    name: '排骨飯',
+                    price: '120'
+                }
+            ]
+        };
+        console.log(foods.datas)
+
+        for(let food of foods.datas){
+            console.log(food.name);
+            console.log(food.price);
         }
-        console.log(user)
+        
     </script>
 </body>
 </html>
