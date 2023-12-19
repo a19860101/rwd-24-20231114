@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let foods = [
+            {
+                id:1,
+                name: '牛肉麵',
+                price: '180'
+            },
+            {
+                id:2,
+                name: '滷肉飯',
+                price: '35'
+            },
+            {
+                id:3,
+                name: '排骨飯',
+                price: '120'
+            }
+        ];
+
+        // forEach
+        // foods.forEach(function(data,idx){
+        //     console.log(data.name)
+        //     console.log(idx);
+        // });
+
+        // map
+        let foods_name = foods.map(function(food){
+            return food.name;
+        })
+        console.log(foods_name)
+    </script>
+</body>
+</html>
