@@ -11,25 +11,41 @@
         // a[0] = 'apple';
         // a[1] = 'banana';
         // a[2] = 'cat';
-        let a = ['apple','banana','cat','dog','elephant'];
+        // let a = ['apple','banana','cat','dog','elephant'];
         // console.log(a);
         // console.log(a[0]);
         // console.log(a[1]);
         // console.log(a[2]);
-        console.log(a.length);
-
+        // console.log(a.length);
+        
+        // 陣列迭代
+        // 
         // for(let i=0;i<a.length;i++){
         //     console.log(a[i]);
         // }
 
+        // 取得陣列索引
         // for(let item in a){
             // console.log(item);
             // console.log(a[item]);
         // }
 
-        for(let item of a){
-            console.log(item);
-        }
+        // 取得陣列內容
+        // for(let item of a){
+        //     console.log(item);
+        // }
+        let drinks = ['焙烏龍','輕烏龍','春烏龍','綠茶','紅茶'];
+
+        // push() 在陣列後方增加資料
+        drinks.push('芝士奶蓋春烏龍','甘蔗春烏龍');
+        // pop() 刪除陣列最後一筆資料
+        drinks.pop();
+        // unshift() 在陣列前方增加資料
+        drinks.unshift('芝士奶蓋春烏龍','芝士奶蓋阿華田');
+        // shift() 刪除陣列最前方資料
+        drinks.shift();
+
+        console.log(drinks);
     </script>
 </body>
 </html>
