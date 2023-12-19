@@ -54,16 +54,27 @@
         })
         console.log(rice)
 
-        //find
+        //find()
         let foods_find = foods.find(function(food){
             return food.price >= 100;
         })
         console.log(foods_find);
-        //findIndex
+        //findIndex()
         let foods_findIndex = foods.findIndex(function(food){
             return food.name === '滷肉飯';
         })
         console.log(foods_findIndex)
+
+        //every()
+        let foods_every = foods.every(function(food){
+            return food.price >= 0;
+        })
+        console.log(foods_every);
+        //some()
+        let foods_some = foods.some(function(food){
+            return food.price >= 100;
+        })
+        console.log(foods_some);
 
     </script>
 </body>
