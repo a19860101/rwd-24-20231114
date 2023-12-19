@@ -76,6 +76,17 @@
         })
         console.log(foods_some);
 
+        //reduce()
+        let price = foods.map(function(food){
+            return food.price;
+        })
+        console.log(price);
+        let total = price.reduce(function(a,b){
+            return Number(a)+Number(b)
+            // console.log(a,b);
+        })
+        console.log(total);
+
     </script>
 </body>
 </html>
