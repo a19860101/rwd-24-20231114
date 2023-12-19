@@ -53,6 +53,18 @@
             return food.name.indexOf('麵') > -1;
         })
         console.log(rice)
+
+        //find
+        let foods_find = foods.find(function(food){
+            return food.price >= 100;
+        })
+        console.log(foods_find);
+        //findIndex
+        let foods_findIndex = foods.findIndex(function(food){
+            return food.name === '滷肉飯';
+        })
+        console.log(foods_findIndex)
+
     </script>
 </body>
 </html>
