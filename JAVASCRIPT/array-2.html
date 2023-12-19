@@ -32,10 +32,17 @@
         // });
 
         // map
-        let foods_name = foods.map(function(food){
-            return food.name;
+        // let foods_name = foods.map(function(food){
+        //     return food.name;
+        // })
+        // console.log(foods_name)
+
+        // filter 篩選
+        let food_100 = foods.filter(function(food){
+            // return food.price >= 100;
+            return food.name === '排骨飯';
         })
-        console.log(foods_name)
+        console.log(food_100)
     </script>
 </body>
 </html>
