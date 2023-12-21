@@ -20,6 +20,7 @@
     <!-- <button onclick="changeColor()">click</button> -->
     <button class="add">add</button>
     <button class="remove">remove</button>
+    <button class="toggle">toggle</button>
     <h1>HELLO</h1>
     <script>
         /*  
@@ -28,6 +29,7 @@
         */
         let add = document.querySelector('.add');
         let remove = document.querySelector('.remove');
+        let toggle = document.querySelector('.toggle');
         let h1 = document.querySelector('h1');
         add.onclick = function(){
             // h1.style.color = 'greenyellow';
@@ -36,6 +38,9 @@
         }
         remove.onclick = function(){
             h1.classList.remove('active');
+        }
+        toggle.onclick = function(){
+            h1.classList.toggle('active');
         }
 
         // function changeColor(){
