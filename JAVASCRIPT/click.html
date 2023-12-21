@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 {
+            transition: 300ms;
+        }
+        .active {
+            background-color: #ffd15e;
+            color: greenyellow;
+            padding: 10px;
+            font-size: 64px;
+        }
+    </style>
 </head>
 <body>
     <!-- <button onclick="changeColor()">click</button> -->
-    <button>click</button>
+    <button class="add">add</button>
+    <button class="remove">remove</button>
     <h1>HELLO</h1>
     <script>
         /*  
             點擊按鈕->文字變色 
             取得按鈕->點擊按鈕->取得文字->文字變色
         */
-        let btn = document.querySelector('button');
-        btn.onclick = function(){
-            let h1 = document.querySelector('h1');
-            h1.style.color = 'greenyellow';
-            h1.style.fontSize = '64px';
+        let add = document.querySelector('.add');
+        let remove = document.querySelector('.remove');
+        let h1 = document.querySelector('h1');
+        add.onclick = function(){
+            // h1.style.color = 'greenyellow';
+            // h1.style.fontSize = '64px';
+            h1.classList.add('active');
+        }
+        remove.onclick = function(){
+            h1.classList.remove('active');
         }
 
         // function changeColor(){
