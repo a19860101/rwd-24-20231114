@@ -27,13 +27,20 @@
     <script>
         //dom document object model 文件物件模型
 
-        let about = document.getElementById('about');
-        let container = document.getElementsByClassName('container');
+        // let about = document.getElementById('about');
+        // let container = document.getElementsByClassName('container');
         // let container = document.getElementsByClassName('container')[0];
-        let li = document.getElementsByTagName('li');
-        console.log(about);
-        console.log(container);
-        console.log(li);
+        // let li = document.getElementsByTagName('li');
+        // console.log(about);
+        // console.log(container);
+        // console.log(li);
+
+        let about = document.querySelector('#about');
+        let container = document.querySelector('.container')
+        let containers = document.querySelectorAll('.container')
+        let li = document.querySelector('li');
+        let lis = document.querySelectorAll('li');
+        console.log(lis[1]);
     </script>
 </body>
 </html>
