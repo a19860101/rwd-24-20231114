@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="changeColor()">click</button> -->
+    <button>click</button>
+    <h1>HELLO</h1>
+    <script>
+        /*  
+            點擊按鈕->文字變色 
+            取得按鈕->點擊按鈕->取得文字->文字變色
+        */
+        let btn = document.querySelector('button');
+        btn.onclick = function(){
+            let h1 = document.querySelector('h1');
+            h1.style.color = 'greenyellow';
+            h1.style.fontSize = '64px';
+        }
+
+        // function changeColor(){
+        //     let h1 = document.querySelector('h1');
+        //     h1.style.color = 'greenyellow';
+        // }
+    </script>
+</body>
+</html>
