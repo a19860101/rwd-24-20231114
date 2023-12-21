@@ -4,15 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .tab {
+            width: 600px;
+            margin-inline: auto;
+        }
+        .tab-nav {
+            width: 100%;
+            display: flex;
+            background-color: #aaa;
+        }
+        .tab-link {
+            padding: 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .tab-link.active {
+            background-color: greenyellow;
+        }
+        .tab-panel {
+            background-color: greenyellow;
+            padding: 20px;
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="tab">
         <div class="tab-nav">
-            <a href="#" class="tab-link">tab 1</a>
+            <a href="#" class="tab-link active">tab 1</a>
             <a href="#" class="tab-link">tab 2</a>
             <a href="#" class="tab-link">tab 3</a>
         </div>
-        <div class="tab-panel">
+        <div class="tab-panel active">
             <h3>tab 1</h3>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis deleniti provident iste neque labore ipsa voluptatem sit! Rerum ea eligendi officia sunt aliquid, deleniti nam vel corrupti possimus temporibus distinctio.
