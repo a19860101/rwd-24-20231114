@@ -55,8 +55,16 @@
         //     return x;
         // }
         let q = x => x;
-        
         console.log(q(100));
+
+        // 若回傳物件時，大括號會變成函式的語法，所以會呈現undefined，需要在外加上一個小括號，即可解決問題
+        let qq = x => (
+            {
+                msg:x
+            }
+        )
+        
+        console.log(qq('hello'));
         
         console.log(us_ntd(100,32));
     </script>
