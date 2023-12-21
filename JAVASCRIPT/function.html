@@ -24,8 +24,8 @@
            return w * h;
         }
         let result = square(100,70);
-        console.log(result)
-        console.log(square(100,70))
+        // console.log(result)
+        // console.log(square(100,70))
 
         // 函式表達式 function expression
         let happy = function(){
@@ -36,7 +36,29 @@
             return x * y;
         }
         let total = exchange(100,32);
-        console.log(total);
+        // console.log(total);
+
+        // 箭頭函式 arrow function
+
+        // let us_ntd = function(val,exc){
+        //     return val * exc
+        // }
+
+        // let us_ntd = (val,exc)=>{
+        //     return val * exc
+        // }
+        // 若只有return時，大括號跟return可省略
+        let us_ntd = (val,exc)=> val * exc
+
+        // 若只有一個參數，小括號可省略
+        // let q = x => {
+        //     return x;
+        // }
+        let q = x => x;
+        
+        console.log(q(100));
+        
+        console.log(us_ntd(100,32));
     </script>
 </body>
 </html>
