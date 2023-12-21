@@ -20,12 +20,23 @@
             console.log(a);
         }  
 
+        function square(w,h){
+           return w * h;
+        }
+        let result = square(100,70);
+        console.log(result)
+        console.log(square(100,70))
+
         // 函式表達式 function expression
         let happy = function(){
             console.log('happy');
         }
 
-        let x = 0;
+        let exchange = function(x,y){
+            return x * y;
+        }
+        let total = exchange(100,32);
+        console.log(total);
     </script>
 </body>
 </html>
