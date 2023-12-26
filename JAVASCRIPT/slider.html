@@ -90,16 +90,27 @@
         let next = document.querySelector('.slider-next');
         let prev = document.querySelector('.slider-prev');
 
+        next.onclick = function(){
+            slider();
+        }
+        prev.onclick = function(){
+            slider('prev');
+        }
+
         // 輪播
-        function slider(){
+        function slider(direction){
             
             // if(currentIndex === total - 1){
             //     currentIndex = 0;
             // }else{
             //     currentIndex++;
             // }
-
-            currentIndex = (currentIndex+1) % total;
+            if(direction === 'prev'){
+                currentIndex = currentIndex === 0 ? total : currentIndex;
+                currentIndex = (currentIndex-1) % total;
+            }else{
+                currentIndex = (currentIndex+1) % total;
+            }
 
             switchImage();
             
