@@ -24,6 +24,7 @@
             padding: 10px;
             text-decoration: none;
             color: #000;
+            transition: 600ms;
         }
         .tab-link.active {
             background-color: greenyellow;
@@ -33,13 +34,15 @@
             padding: 20px;
             /* display: none; */
             opacity: 0;
+            visibility: hidden;
             position: absolute;
-            transition: 1400ms;
+            transition: 600ms;
             
         }
         .tab-panel.active {
             /* display: block; */
             opacity: 1;
+            visibility: visible
         }
     </style>
 </head>
