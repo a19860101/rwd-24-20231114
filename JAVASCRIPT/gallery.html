@@ -23,6 +23,7 @@
         .thumb {
             width: 20%;
         }
+        
     </style>
 </head>
 <body>
@@ -36,5 +37,16 @@
             <img src="https://picsum.photos/id/56/600" alt="" class="thumb">
         </div>
     </div>
+    <script>
+        let thumb = document.querySelectorAll('.thumb');
+        for(let t of thumb){
+            t.onclick = function(){
+                let src = this.getAttribute('src');
+                let main = document.querySelector('.main');
+                main.setAttribute('src',src);
+
+            }
+        }
+    </script>
 </body>
 </html>
