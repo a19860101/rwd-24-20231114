@@ -65,6 +65,10 @@
             background-color: red;
             margin-inline: 10px;
             border-radius: 50%;
+            transition: 300ms;
+        }
+        .slider-dot.active {
+            background-color: #d7ff11;
         }
     </style>
 </head>
@@ -112,12 +116,14 @@
         // 下一張
         next.onclick = function(){
             slider();
-            resetTimer()
+            resetTimer();
+            switchDot();
         }
         // 上一張
         prev.onclick = function(){
             slider('prev');
-            resetTimer()
+            resetTimer();
+            switchDot();
         }
 
         // 輪播
@@ -136,6 +142,7 @@
             }
 
             switchImage();
+            switchDot();
             
             console.log(currentIndex);
         }
@@ -159,6 +166,22 @@
             dot.classList.add('slider-dot');
             dot.dataset.index = i;
             document.querySelector('.slider-dots').append(dot);
+        }
+        // 切換dot樣式
+        function switchDot(){
+            document.querySelector('.slider-dot.active').classList.remove('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        let dots = document.querySelectorAll('.slider-dot');
+        dots[0].classList.add('active');
+        for(let dot of dots){
+            dot.onclick = function(){
+                currentIndex = Number(this.dataset.index);
+                switchImage();
+                switchDot();
+                resetTimer();
+            }
         }
     </script>
 </body>
