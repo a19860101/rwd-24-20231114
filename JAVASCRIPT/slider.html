@@ -52,5 +52,25 @@
             <img src="https://picsum.photos/id/64/1600/900" alt="">
         </div>
     </div>
+    <script>
+        let imgs = document.querySelectorAll('.slider-item');
+        let total = imgs.length;
+        let currentIndex = 0;
+        let timeout =  1000;
+
+        // 輪播
+        function slider(){
+            
+            if(currentIndex === total - 1){
+                currentIndex = 0;
+            }else{
+                currentIndex++;
+            }
+
+            console.log(currentIndex);
+        }
+        
+        setInterval(slider,timeout);
+    </script>
 </body>
 </html>
