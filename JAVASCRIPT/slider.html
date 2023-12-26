@@ -23,6 +23,7 @@
             position: absolute;
             visibility: hidden;
             opacity: 0;
+            transition: 800ms;
         }
         .slider-item.active {
             visibility: visible;
@@ -56,7 +57,7 @@
         let imgs = document.querySelectorAll('.slider-item');
         let total = imgs.length;
         let currentIndex = 0;
-        let timeout =  1000;
+        let timeout =  3000;
 
         // 輪播
         function slider(){
@@ -67,6 +68,9 @@
                 currentIndex++;
             }
 
+            document.querySelector('.slider-item.active').classList.remove('active');
+            imgs[currentIndex].classList.add('active');
+            
             console.log(currentIndex);
         }
         
