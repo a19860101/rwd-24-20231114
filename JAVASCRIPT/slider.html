@@ -62,16 +62,21 @@
         // 輪播
         function slider(){
             
-            if(currentIndex === total - 1){
-                currentIndex = 0;
-            }else{
-                currentIndex++;
-            }
+            // if(currentIndex === total - 1){
+            //     currentIndex = 0;
+            // }else{
+            //     currentIndex++;
+            // }
 
-            document.querySelector('.slider-item.active').classList.remove('active');
-            imgs[currentIndex].classList.add('active');
+            currentIndex = (currentIndex+1) % total;
+
+            switchImage();
             
             console.log(currentIndex);
+        }
+        function switchImage(){
+            document.querySelector('.slider-item.active').classList.remove('active');
+            imgs[currentIndex].classList.add('active');
         }
         
         setInterval(slider,timeout);
