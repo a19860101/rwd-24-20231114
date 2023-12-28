@@ -14,44 +14,35 @@
             width: 600px;
             margin-inline: auto;
         }
-        .collapse h2 {
+        .collapse-btn {
             background-color: #ffe854;
             padding: 10px;
             border-bottom: 2px solid #fa0;
+            cursor: pointer;
         }
         .collapse-panel {
             background-color: #ffcece;
-            padding-inline: 10px;
+            padding-inline: 30px;
             height: 0;
             overflow-y: clip;
+            box-sizing: content-box;
+            transition: 400ms;
         }
         .collapse-panel.active {
-            padding:10px;
+            padding:30px;
             height: fit-content;
         }
     </style>
 </head>
 <body>
     <div class="collapse">
-        <h2>title 1</h2>
+        <h2 class="collapse-btn">title 1</h2>
         <div class="collapse-panel">
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
             </p>
         </div>
-        <h2>title 2</h2>
-        <div class="collapse-panel">
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
-            </p>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
-            </p>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
-            </p>
-        </div>
-        <h2>title 3</h2>
+        <h2 class="collapse-btn">title 2</h2>
         <div class="collapse-panel">
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
@@ -59,13 +50,40 @@
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
             </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
+            </p>
         </div>
-        <h2>title 4</h2>
+        <h2 class="collapse-btn">title 3</h2>
+        <div class="collapse-panel">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
+            </p>
+        </div>
+        <h2 class="collapse-btn">title 4</h2>
         <div class="collapse-panel">
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
             </p>
         </div>
     </div>
+    <script>
+        let btns = document.querySelectorAll('.collapse-btn');
+        for(let btn of btns){
+            btn.onclick = function(){
+                let panel = this.nextElementSibling;
+                if(panel.style.height){
+                    panel.style.height = null;
+                    panel.classList.remove('active');
+                }else{
+                    panel.style.height = panel.scrollHeight + 'px';
+                    panel.classList.add('active');
+                }
+            }
+        }
+    </script>
 </body>
 </html>
