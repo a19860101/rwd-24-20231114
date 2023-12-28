@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -32,6 +34,39 @@
             width: 1200px;
             flex-shrink: 0;
         }
+        .slider-nav {
+            position: absolute;
+            padding-block: 10px;
+            width: 100%;
+            bottom: 0;
+            transform: translateY(100%);
+            text-align: center;
+        }
+        .slider-nav a {
+            color: #000;
+            text-decoration: none;
+            padding-inline: 10px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            width: 100%;
+            bottom:0;
+            display: flex;
+            justify-content: center;
+            padding-block:15px;
+        }
+        .slider-dot {
+            width: 13px;
+            height: 13px;
+            background-color: red;
+            margin-inline: 10px;
+            border-radius: 50%;
+            transition: 300ms;
+        }
+        .slider-dot.active {
+            background-color: #d7ff11;
+        }
     </style>
 </head>
 <body>
@@ -59,6 +94,16 @@
                 <img src="https://picsum.photos/id/74/1600/900" alt="">
             </div>
         </div>
+        <div class="slider-nav">
+            <a href="#" class="slider-prev">
+                <i class="fa-solid fa-circle-chevron-left fa-2x"></i>
+            </a>
+            <a href="#" class="slider-next">
+                <i class="fa-solid fa-circle-chevron-right fa-2x"></i>
+            </a>
+        </div>
+        <div class="slider-dots"></div>
+
     </div>
     <script>
         let imgs = document.querySelectorAll('.slider-item');
@@ -75,6 +120,19 @@
         let wrapper = document.querySelector('.slider-wrapper');
         wrapper.style.width = wrapperWidth + 'px';
         console.log(wrapperWidth);
+
+        // 下一張
+        next.onclick = function(){
+            slider();
+            resetTimer();
+            switchDot();
+        }
+        // 上一張
+        prev.onclick = function(){
+            slider('prev');
+            resetTimer();
+            switchDot();
+        }
         // 輪播
         function slider(direction){
             if(direction === 'prev'){
@@ -100,6 +158,30 @@
         function resetTimer(){
             clearInterval(timer);
             timer = setInterval(slider,timeout);
+        }
+
+        // 產生dots
+        for(let i=0;i<total;i++){
+            let dot = document.createElement('span');
+            dot.classList.add('slider-dot');
+            dot.dataset.index = i;
+            document.querySelector('.slider-dots').append(dot);
+        }
+        // 切換dot樣式
+        function switchDot(){
+            document.querySelector('.slider-dot.active').classList.remove('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        let dots = document.querySelectorAll('.slider-dot');
+        dots[0].classList.add('active');
+        for(let dot of dots){
+            dot.onclick = function(){
+                currentIndex = Number(this.dataset.index);
+                switchImage();
+                switchDot();
+                resetTimer();
+            }
         }
     </script>
 </body>
