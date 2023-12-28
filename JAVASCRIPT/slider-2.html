@@ -15,24 +15,27 @@
             height: 600px;
             margin-inline: auto;
             position: relative;
-            overflow: hidden;
+            overflow: clip;
         }
         img {
             display: block;
-        }
-        .slider-item {
-            width: 1200px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .slider-wrapper {
             display: flex;
             transition: 600ms;
+        }
+        .slider-item {
+            width: 1200px;
         }
     </style>
 </head>
 <body>
     <div class="slider">
         <div class="slider-wrapper">
-            <div class="slider-item active">
+            <div class="slider-item">
                 <img src="https://picsum.photos/id/14/1600/900" alt="">
             </div>
             <div class="slider-item">
@@ -54,15 +57,6 @@
                 <img src="https://picsum.photos/id/74/1600/900" alt="">
             </div>
         </div>
-        <div class="slider-nav">
-            <a href="#" class="slider-prev">
-                <i class="fa-solid fa-circle-chevron-left fa-2x"></i>
-            </a>
-            <a href="#" class="slider-next">
-                <i class="fa-solid fa-circle-chevron-right fa-2x"></i>
-            </a>
-        </div>
-        <div class="slider-dots"></div>
     </div>
     <script>
         let imgs = document.querySelectorAll('.slider-item');
@@ -72,24 +66,13 @@
         let next = document.querySelector('.slider-next');
         let prev = document.querySelector('.slider-prev');
 
-        let sliderItem = document.querySelector('.slider-item')
-        let sliderWidth = sliderItem.clientWidth;
+        let sliderItem = document.querySelector('.slider-item');
+        // let sliderWidth = sliderItem.clientWidth;
+        let sliderWidth = 1200;
         let wrapperWidth  = sliderWidth * total;
-
+        console.log(sliderWidth);
         let wrapper = document.querySelector('.slider-wrapper');
         wrapper.style.width = wrapperWidth + 'px';
-        // 下一張
-        next.onclick = function(){
-            slider();
-            resetTimer();
-            switchDot();
-        }
-        // 上一張
-        prev.onclick = function(){
-            slider('prev');
-            resetTimer();
-            switchDot();
-        }
         // 輪播
         function slider(direction){
             if(direction === 'prev'){
@@ -100,13 +83,13 @@
             }
 
             switchImage();
-            switchDot();
+            // switchDot();
             
-            console.log(currentIndex);
+            // console.log(currentIndex);
         }
         // 切換圖片
         function switchImage(){
-            wrapper.style.marginLeft = -(wrapperWidth * currentIndex) + 'px';
+            wrapper.style.marginLeft = -(sliderWidth * currentIndex) + 'px';
         }
 
         // 定義計時器
@@ -115,30 +98,6 @@
         function resetTimer(){
             clearInterval(timer);
             timer = setInterval(slider,timeout);
-        }
-
-        // 產生dots
-        for(let i=0;i<total;i++){
-            let dot = document.createElement('span');
-            dot.classList.add('slider-dot');
-            dot.dataset.index = i;
-            document.querySelector('.slider-dots').append(dot);
-        }
-        // 切換dot樣式
-        function switchDot(){
-            document.querySelector('.slider-dot.active').classList.remove('active');
-            dots[currentIndex].classList.add('active');
-        }
-
-        let dots = document.querySelectorAll('.slider-dot');
-        dots[0].classList.add('active');
-        for(let dot of dots){
-            dot.onclick = function(){
-                currentIndex = Number(this.dataset.index);
-                switchImage();
-                switchDot();
-                resetTimer();
-            }
         }
     </script>
 </body>
