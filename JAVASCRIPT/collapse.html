@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -19,6 +21,24 @@
             padding: 10px;
             border-bottom: 2px solid #fa0;
             cursor: pointer;
+            transition: 400ms;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .collapse-btn:hover {
+            background-color: #84ffd6;
+
+        }
+        .collapse-btn.active {
+            background-color: #84ffd6;
+
+        }
+        .collapse-btn i {
+            transition: 400ms;
+        }
+        .collapse-btn.active i {
+            transform: rotate(-90deg);
         }
         .collapse-panel {
             background-color: #ffcece;
@@ -36,25 +56,13 @@
 </head>
 <body>
     <div class="collapse">
-        <h2 class="collapse-btn">title 1</h2>
+        <h2 class="collapse-btn">title 1<i class="fa-solid fa-caret-down"></i></h2>
         <div class="collapse-panel">
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
             </p>
         </div>
-        <h2 class="collapse-btn">title 2</h2>
-        <div class="collapse-panel">
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
-            </p>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
-            </p>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
-            </p>
-        </div>
-        <h2 class="collapse-btn">title 3</h2>
+        <h2 class="collapse-btn">title 2<i class="fa-solid fa-caret-down"></i></h2>
         <div class="collapse-panel">
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
@@ -62,8 +70,20 @@
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
             </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
+            </p>
         </div>
-        <h2 class="collapse-btn">title 4</h2>
+        <h2 class="collapse-btn">title 3<i class="fa-solid fa-caret-down"></i></h2>
+        <div class="collapse-panel">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
+            </p>
+        </div>
+        <h2 class="collapse-btn">title 4<i class="fa-solid fa-caret-down"></i></h2>
         <div class="collapse-panel">
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A reiciendis repudiandae sit veniam. Id veniam illum assumenda odio totam laborum corrupti ad, quaerat temporibus unde esse, labore officia officiis beatae.
@@ -75,6 +95,8 @@
         for(let btn of btns){
             btn.onclick = function(){
                 let panel = this.nextElementSibling;
+                this.classList.toggle('active');
+                
                 if(panel.style.height){
                     panel.style.height = null;
                     panel.classList.remove('active');
