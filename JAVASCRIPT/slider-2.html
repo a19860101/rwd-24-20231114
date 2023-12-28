@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .slider {
+            width: 1200px;
+            margin-inline: auto;
+            position: relative;
+            /* overflow: clip; */
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        .slider-wrapper {
+            width: 8400px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <div class="slider-item active">
+                <img src="https://picsum.photos/id/14/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/24/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/34/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/44/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/54/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/64/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/74/1600/900" alt="">
+            </div>
+        </div>
+        <div class="slider-nav">
+            <a href="#" class="slider-prev">
+                <i class="fa-solid fa-circle-chevron-left fa-2x"></i>
+            </a>
+            <a href="#" class="slider-next">
+                <i class="fa-solid fa-circle-chevron-right fa-2x"></i>
+            </a>
+        </div>
+        <div class="slider-dots"></div>
+    </div>
+</body>
+</html>
