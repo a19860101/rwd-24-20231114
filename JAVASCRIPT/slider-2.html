@@ -12,19 +12,20 @@
         }
         .slider {
             width: 1200px;
+            height: 600px;
             margin-inline: auto;
             position: relative;
-            /* overflow: clip; */
+            overflow: hidden;
         }
         img {
             display: block;
         }
         .slider-item {
-            width: 100%;
-            /* flex-shrink: 0; */
+            width: 1200px;
         }
         .slider-wrapper {
             display: flex;
+            transition: 600ms;
         }
     </style>
 </head>
@@ -77,6 +78,68 @@
 
         let wrapper = document.querySelector('.slider-wrapper');
         wrapper.style.width = wrapperWidth + 'px';
+        // 下一張
+        next.onclick = function(){
+            slider();
+            resetTimer();
+            switchDot();
+        }
+        // 上一張
+        prev.onclick = function(){
+            slider('prev');
+            resetTimer();
+            switchDot();
+        }
+        // 輪播
+        function slider(direction){
+            if(direction === 'prev'){
+                currentIndex = currentIndex === 0 ? total : currentIndex;
+                currentIndex = (currentIndex-1) % total;
+            }else{
+                currentIndex = (currentIndex+1) % total;
+            }
+
+            switchImage();
+            switchDot();
+            
+            console.log(currentIndex);
+        }
+        // 切換圖片
+        function switchImage(){
+            wrapper.style.marginLeft = -(wrapperWidth * currentIndex) + 'px';
+        }
+
+        // 定義計時器
+        let timer = setInterval(slider,timeout);
+        // 重置計時器
+        function resetTimer(){
+            clearInterval(timer);
+            timer = setInterval(slider,timeout);
+        }
+
+        // 產生dots
+        for(let i=0;i<total;i++){
+            let dot = document.createElement('span');
+            dot.classList.add('slider-dot');
+            dot.dataset.index = i;
+            document.querySelector('.slider-dots').append(dot);
+        }
+        // 切換dot樣式
+        function switchDot(){
+            document.querySelector('.slider-dot.active').classList.remove('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        let dots = document.querySelectorAll('.slider-dot');
+        dots[0].classList.add('active');
+        for(let dot of dots){
+            dot.onclick = function(){
+                currentIndex = Number(this.dataset.index);
+                switchImage();
+                switchDot();
+                resetTimer();
+            }
+        }
     </script>
 </body>
 </html>
