@@ -12,10 +12,11 @@
         }
         .slider {
             width: 1200px;
-            height: 600px;
+            aspect-ratio: 2 / 1;
+            /* height: 600px; */
             margin-inline: auto;
             position: relative;
-            overflow: clip;
+            overflow-x: clip;
         }
         img {
             display: block;
@@ -29,6 +30,7 @@
         }
         .slider-item {
             width: 1200px;
+            flex-shrink: 0;
         }
     </style>
 </head>
@@ -67,12 +69,12 @@
         let prev = document.querySelector('.slider-prev');
 
         let sliderItem = document.querySelector('.slider-item');
-        // let sliderWidth = sliderItem.clientWidth;
-        let sliderWidth = 1200;
+        let sliderWidth = sliderItem.clientWidth;
+        // let sliderWidth = 1200;
         let wrapperWidth  = sliderWidth * total;
-        console.log(sliderWidth);
         let wrapper = document.querySelector('.slider-wrapper');
         wrapper.style.width = wrapperWidth + 'px';
+        console.log(wrapperWidth);
         // 輪播
         function slider(direction){
             if(direction === 'prev'){
