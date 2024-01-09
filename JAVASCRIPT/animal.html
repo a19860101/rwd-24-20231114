@@ -34,9 +34,15 @@
     </style>
 </head>
 <body>
-    <select name="" id="" class="select_kind">
-        <option>--請選擇--</option>
-    </select>
+    <form action="">
+        <select name="kind" id="" class="select_kind">
+            <option>--請選擇種類--</option>
+        </select>
+        <select name="variety" id="" class="select_v">
+            <option>--請選擇品種--</option>
+        </select>
+        <input type="submit" value="查詢">
+    </form>
     <div class="container">
 
     </div>
@@ -56,9 +62,17 @@
                 opt.textContent = k;
                 document.querySelector('.select_kind').append(opt);
             }
+            for(let v of varieties){
+                let opt = document.createElement('option');
+                opt.value = v;
+                opt.textContent = v;
+                document.querySelector('.select_v').append(opt);
+            }
             
-            let sk = document.querySelector('.select_kind');
-            sk.onchange = function(){
+            let sk = document.querySelector('form');
+            sk.onsubmit = function(e){
+                console.log(e.target.select);
+                return false;
                 console.log(this.value);
                 let container = document.querySelector('.container');
                 container.textContent = '';
