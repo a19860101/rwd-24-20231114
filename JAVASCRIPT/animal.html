@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        // 動物認領養 https://data.gov.tw/dataset/85903
+        const url = 'https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&IsTransData=1';
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const varieties = Array.from(new Set(data.map(d => d.animal_Variety)));
+            const kinds = [...new Set(data.map(d => d.animal_kind))];
+            console.log(varieties);
+        })
+    </script>
+</body>
+</html>
