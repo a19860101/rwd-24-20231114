@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .col {
+            flex:1 0 280px;
+            padding: 15px;
+            background-color: #ccc;
+        }
+        .img {
+            aspect-ratio: 4 / 3;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,6 +46,38 @@
             const varieties = Array.from(new Set(data.map(d => d.animal_Variety)));
             const kinds = [...new Set(data.map(d => d.animal_kind))];
             console.log(varieties);
+
+            let container = document.querySelector('.container');
+            for(let animal of data){
+                let kind = document.createElement('div');
+                kind.classList.add('kind');
+                kind.append(animal.animal_kind);
+
+                let place = document.createElement('div');
+                place.classList.add('place');
+                place.append(animal.animal_place);
+
+                let variety = document.createElement('div');
+                variety.classList.add('variety');
+                variety.append(animal.animal_Variety);
+                
+                let sex = document.createElement('div');
+                sex.classList.add('sex');
+                sex.append(animal.animal_sex);
+                
+                let img = document.createElement('div');
+                let file = document.createElement('img');
+                file.classList.add('file');
+                file.setAttribute('src',animal.album_file);
+                img.classList.add('img');
+                img.append(file);
+
+                let col = document.createElement('div');
+                col.classList.add('col');
+
+                col.append(img,place,kind,variety,sex);
+                container.append(col);
+            }
         })
     </script>
 </body>
