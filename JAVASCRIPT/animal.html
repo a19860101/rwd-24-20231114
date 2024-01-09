@@ -43,12 +43,16 @@
         </select>
         <input type="submit" value="查詢">
     </form>
+    <div class="n"></div>
     <div class="container">
 
     </div>
     <script>
         // 動物認領養 https://data.gov.tw/dataset/85903
         const url = 'https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&IsTransData=1';
+        let container = document.querySelector('.container');
+        let n = document.querySelector('.n');
+
         fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -69,14 +73,18 @@
                 document.querySelector('.select_v').append(opt);
             }
             
-            let sk = document.querySelector('form');
-            sk.onsubmit = function(e){
-                console.log(e.target.select);
-                return false;
-                console.log(this.value);
-                let container = document.querySelector('.container');
+            let form = document.querySelector('form');
+            form.onsubmit = function(e){
+                let k = form.elements.kind.value;
+                let v = form.elements.variety.value;
                 container.textContent = '';
-                let filterData = data.filter(e => e.animal_kind === this.value);
+                n.textContent = '';
+                let filterData = data.filter(e => e.animal_kind === k && e.animal_Variety === v);
+                n.append('找到的結果:共'+filterData.length+'筆');
+                if(filterData.length === 0){
+                    alert('沒有符合該條件的動物，請重新查詢');
+                    return;
+                }
                 for(let animal of filterData){
                     let kind = document.createElement('div');
                     kind.classList.add('kind');
@@ -107,6 +115,7 @@
                     col.append(img,place,kind,variety,sex);
                     container.append(col);
                 }
+                return false;
             }
             // sk.onchange = e =>{
             //     console.log(e.target.value)
