@@ -60,41 +60,44 @@
             let sk = document.querySelector('.select_kind');
             sk.onchange = function(){
                 console.log(this.value);
+                let container = document.querySelector('.container');
+                container.textContent = '';
+                let filterData = data.filter(e => e.animal_kind === this.value);
+                for(let animal of filterData){
+                    let kind = document.createElement('div');
+                    kind.classList.add('kind');
+                    kind.append(animal.animal_kind);
+
+                    let place = document.createElement('div');
+                    place.classList.add('place');
+                    place.append(animal.animal_place);
+
+                    let variety = document.createElement('div');
+                    variety.classList.add('variety');
+                    variety.append(animal.animal_Variety);
+
+                    let sex = document.createElement('div');
+                    sex.classList.add('sex');
+                    sex.append(animal.animal_sex);
+                    
+                    let img = document.createElement('div');
+                    let file = document.createElement('img');
+                    file.classList.add('file');
+                    file.setAttribute('src',animal.album_file);
+                    img.classList.add('img');
+                    img.append(file);
+
+                    let col = document.createElement('div');
+                    col.classList.add('col');
+
+                    col.append(img,place,kind,variety,sex);
+                    container.append(col);
+                }
             }
             // sk.onchange = e =>{
             //     console.log(e.target.value)
             // }
-            let container = document.querySelector('.container');
-            for(let animal of data){
-                let kind = document.createElement('div');
-                kind.classList.add('kind');
-                kind.append(animal.animal_kind);
-
-                let place = document.createElement('div');
-                place.classList.add('place');
-                place.append(animal.animal_place);
-
-                let variety = document.createElement('div');
-                variety.classList.add('variety');
-                variety.append(animal.animal_Variety);
-
-                let sex = document.createElement('div');
-                sex.classList.add('sex');
-                sex.append(animal.animal_sex);
-                
-                let img = document.createElement('div');
-                let file = document.createElement('img');
-                file.classList.add('file');
-                file.setAttribute('src',animal.album_file);
-                img.classList.add('img');
-                img.append(file);
-
-                let col = document.createElement('div');
-                col.classList.add('col');
-
-                col.append(img,place,kind,variety,sex);
-                // container.append(col);
-            }
+            
         })
     </script>
 </body>
