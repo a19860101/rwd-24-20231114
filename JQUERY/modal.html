@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            background-color: rgb(0 0 0 / .5);
+            inset:0;
+            margin: auto;
+        }
+        .modal-container {
+            position: fixed;
+            background-color: #fff;
+            width: 60%;
+            max-width: 800px;
+            height: fit-content;
+            padding: 30px;
+            border-radius: 15px;
+            inset:0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="modal-btn" data-modal="#modal-1">Modal 1</a>
+    <div class="modal" id="modal-1">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Modal 1</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reiciendis fugit, facilis laboriosam aut quod corporis molestias sunt tempore iure natus, dignissimos officiis dolorem? Quas illo qui at quisquam cupiditate.
+
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#">Close</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
