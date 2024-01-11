@@ -146,12 +146,55 @@
         .desktop-nav {
             display: none;
         }
+        .m-nav {
+            display: block;
+            background-color: rgba(0, 153, 135, 0.536);
+            position: fixed;
+            left: 100%;
+            width: 100%;
+            z-index: 9999;
+            height: 100%;
+            transition: 600ms;
+            backdrop-filter: blur(6px);
+        }
+        .m-nav.active {
+            /* left: 20%; */
+            transform: translateX(-80%);
+        }
+        .m-nav a{
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+        }
+        .m-nav-link {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+
+        }
+        .m-nav-toggle {
+            display: flex;
+            width: 40px;
+            height: 40px;
+            background-color: #303030;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+        }
         @media(min-width: 600px){
             .mobile-nav {
                 display: none;
             }
             .desktop-nav {
                 display: flex;
+            }
+            .m-nav {
+                left: 100%;
+            }
+            .m-nav-toggle {
+                display: none;
             }
         }
     </style>
@@ -165,7 +208,7 @@
             <a href="#folio" class="nav-link">Folio</a>
         </div>
     </nav>
-    <nav class="mobile-nav">
+    <!-- <nav class="mobile-nav">
         <a href="#" class="mobile-nav-logo">LOGO</a>
         <a href="#" class="mobile-toggle"><i class="fa-solid fa-bars fa-xl"></i></a>
         <div class="mobile-nav-menu">
@@ -173,7 +216,16 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#folio" class="nav-link">Folio</a>
         </div>
-    </nav>
+    </nav> -->
+    <div class="m-nav">
+        <a href="#" class="m-nav-toggle"><i class="fa-solid fa-bars fa-xl"></i></a>
+        <div>
+            <a href="#">Logo</a>
+        </div>
+        <a href="#" class="m-nav-link">Home</a>
+        <a href="#" class="m-nav-link">About</a>
+        <a href="#" class="m-nav-link">Folio</a>
+    </div>
     <header>
         <img src="https://picsum.photos/id/89/1600/800" alt="">
         <div class="header-content">
@@ -286,6 +338,9 @@
         $(function(){
             $('.mobile-toggle').click(function(){
                 $('.mobile-nav-menu').slideToggle();
+            })
+            $('.m-nav-toggle').click(function(){
+                $('.m-nav').toggleClass('active')
             })
         })
     </script>
