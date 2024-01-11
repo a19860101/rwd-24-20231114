@@ -124,12 +124,51 @@
             background-color: #222;
             color: #eee;
         }
+        .mobile-nav {
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+            /* background-color: red; */
+        }
+
+        .mobile-toggle {
+            margin-left: auto;
+        }
+        .mobile-nav-menu {
+            margin-top: 10px;
+            width: 100%;
+            display: none;
+        }
+        .mobile-nav-menu .nav-link {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .desktop-nav {
+            display: none;
+        }
+        @media(min-width: 600px){
+            .mobile-nav {
+                display: none;
+            }
+            .desktop-nav {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav>
+    <nav class="desktop-nav">
         <a href="#" class="nav-logo">LOGO</a>
         <div class="nav-menu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#folio" class="nav-link">Folio</a>
+        </div>
+    </nav>
+    <nav class="mobile-nav">
+        <a href="#" class="mobile-nav-logo">LOGO</a>
+        <a href="#" class="mobile-toggle"><i class="fa-solid fa-bars fa-xl"></i></a>
+        <div class="mobile-nav-menu">
             <a href="#" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#folio" class="nav-link">Folio</a>
