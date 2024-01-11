@@ -7,13 +7,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         p {
-            transition:600ms;
-            
+            /* transition:600ms; */
+            background-color: #f67a7a;
+            padding: 15px;
         }
         .active {
-            color: red;
-            padding: 15px;
-            background-color: #ccc;
+            background-color: greenyellow;
         }
     </style>
 </head>
@@ -21,11 +20,24 @@
     <a href="#" class="add">add</a>
     <a href="#" class="remove">remove</a>
     <a href="#" class="toggle">toggle</a>
+    <hr>
+    <a href="#" class="hide">hide</a>
+    <a href="#" class="show">show</a>
+    <a href="#" class="toggle">toggle</a>
+    <hr>
+    <a href="#" class="fadeOut">fade out</a>
+    <a href="#" class="fadeIn">fade in</a>
+    <a href="#" class="fadeToggle">fade toggle</a>
+    <hr>
+    <a href="#" class="slideUp">slide up</a>
+    <a href="#" class="slideDown">slide down</a>
+    <a href="#" class="slideToggle">slide toggle</a>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe alias quidem eum qui, asperiores inventore omnis accusantium, amet magni numquam et laborum aliquid! Neque maiores sit nostrum aspernatur atque voluptatibus?
     </p>
     <script>
         $(function(){
+            //class
             $('.add').click(function(){
                 // $('p').css({color:'red'})
                 $('p').addClass('active');
@@ -34,8 +46,38 @@
                 // $('p').css({color:'initial'})
                 $('p').removeClass('active');
             });
+            //show hide toggle
             $('.toggle').click(function(){
                 $('p').toggleClass('active');
+            })
+            $('.hide').click(function(){
+                $('p').hide();
+            })
+            $('.show').click(function(){
+                $('p').show();
+            })
+            $('.toggle').click(function(){
+                $('p').toggle();
+            })
+            //fade
+            $('.fadeIn').click(function(){
+                $('p').fadeIn();
+            })
+            $('.fadeOut').click(function(){
+                $('p').fadeOut();
+            })
+            $('.fadeToggle').click(function(){
+                $('p').fadeToggle();
+            })
+            //slide
+            $('.slideUp').click(function(){
+                $('p').slideUp();
+            })
+            $('.slideDown').click(function(){
+                $('p').slideDown();
+            })
+            $('.slideToggle').click(function(){
+                $('p').slideToggle();
             })
         })
     </script>
