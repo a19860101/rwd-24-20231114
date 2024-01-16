@@ -13,7 +13,7 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #ff8b8b;
+            /* background-color: #ff8b8b; */
         }
         .slider {
             max-width: 1200px;
@@ -29,6 +29,15 @@
         img {
             width: 100%;
             display: block;
+        }
+        .slick-next:before, .slick-prev:before {
+            color: #000;
+        }
+        .slick-dots li button:before {
+            color: #098;
+        }
+        .slick-dots li.slick-active button:before {
+            color: #fa0;
         }
     </style>
 </head>
@@ -87,7 +96,7 @@
     <script>
         $(function(){
             $('.slider').slick({
-                autoplay: true,
+                autoplay: false,
                 autoplaySpeed: 5000,
                 speed: 800,
                 arrows: true,
