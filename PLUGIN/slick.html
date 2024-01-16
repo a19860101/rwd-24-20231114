@@ -9,12 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             background-color: #ff8b8b;
         }
         .slider {
             max-width: 1200px;
             margin-inline: auto;
+        }
+        .products {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+        .product-item {
+            padding:10px;
         }
         img {
             width: 100%;
@@ -42,6 +52,38 @@
             </div>
         </div>
     </header>
+    <div class="products">
+        <div class="product-item">
+            <img src="https://picsum.photos/id/18/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/28/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/38/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/48/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/58/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/68/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/78/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/88/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/98/400" alt="">
+        </div>
+        <div class="product-item">
+            <img src="https://picsum.photos/id/108/400" alt="">
+        </div>
+    </div>
     <script>
         $(function(){
             $('.slider').slick({
@@ -49,6 +91,11 @@
                 autoplaySpeed: 5000,
                 speed: 800,
                 arrows: true,
+                dots: true
+            });
+            $('.products').slick({
+                slidesToShow: 5,
+                slidesToScroll: 5,
                 dots: true
             });
         })
