@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <style>
+        body {
+            background-color: #ff8b8b;
+        }
+        .slider {
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="slider">
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/21/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/11/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/41/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/51/1600/900" alt="">
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/61/1600/900" alt="">
+            </div>
+        </div>
+    </header>
+    <script>
+        $(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 800,
+                arrows: true,
+                dots: true
+            });
+        })
+    </script>
+</body>
+</html>
