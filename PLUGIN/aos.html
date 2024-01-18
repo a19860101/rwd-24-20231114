@@ -23,6 +23,7 @@
         nav {
             width: 100%;
             padding: 15px;
+            padding-top: 25px;
             text-align: center;
             background-color: #222;
             position: sticky;
@@ -74,7 +75,7 @@
         section:nth-of-type(4){
             background-color: #ffc7fe;
         }
-        .test {
+        /* .test {
             width: 100px;
             height: 100px;
             background-color: #fa0;
@@ -90,11 +91,29 @@
                 right: 400px;
                 transform: scale(4)rotate(360deg);
             }
+        } */
+        .progress {
+            width: 100%;
+            position: fixed;
+            height: 10px;
+            background-color: #fb5a5a;
+            z-index: 9999;
+            animation: progress linear;
+            animation-timeline: scroll();
+            transform: scaleX(0);
+            top: 0;
+            transform-origin: left;
+        }
+        @keyframes progress {
+            to {
+                transform: scaleX(1);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="test"></div>
+    <div class="progress"></div>
+    <!-- <div class="test"></div> -->
     <nav>
         <a href="#section-1">section 1</a>
         <a href="#section-2">section 2</a>
