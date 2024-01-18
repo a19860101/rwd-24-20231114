@@ -26,32 +26,34 @@
             //b1ecbccd638b763d489602917ba47cc3
 
             $('#q').change(function(){
+                $('.container').empty();
                 let q = $(this).val();
                 console.log(q)
+                $.ajax({
+                    url:url,
+                    data:{
+                        q:q,
+                        units: 'metric',
+                        lang:'zh_tw',
+                        appid:'b1ecbccd638b763d489602917ba47cc3'
+                    },
+                    success:function(data){
+                        console.log(data);
+                        let text = `
+                            <div>今日天氣${data.weather[0].description}</div>
+                            <div class="temp">目前溫度:${data.main.temp}</div>
+                            <div class="feels">體感溫度:${data.main.feels_like}</div>
+                            <div>最高溫:${data.main.temp_max}最低溫:${data.main.temp_min}</div>
+                        `;
+                        $('.container').append(text);
+                    },
+                    error:function(){
+                        alert('error');
+                    }
+                    
+                })
             })
-            $.ajax({
-                url:url,
-                data:{
-                    q: 'bangkok',
-                    units: 'metric',
-                    lang:'zh_tw',
-                    appid:'b1ecbccd638b763d489602917ba47cc3'
-                },
-                success:function(data){
-                    console.log(data);
-                    let text = `
-                        <div>今日天氣${data.weather[0].description}</div>
-                        <div class="temp">目前溫度:${data.main.temp}</div>
-                        <div class="feels">體感溫度:${data.main.feels_like}</div>
-                        <div>最高溫:${data.main.temp_max}最低溫:${data.main.temp_min}</div>
-                    `;
-                    $('.container').append(text);
-                },
-                error:function(){
-                    alert('error');
-                }
-                
-            })
+           
         })
     </script>
 </body>
