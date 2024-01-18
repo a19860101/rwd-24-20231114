@@ -28,7 +28,8 @@
             $('#q').change(function(){
                 $('.container').empty();
                 let q = $(this).val();
-                console.log(q)
+                let name = $(this).find(':selected').text();
+                console.log(name)
                 $.ajax({
                     url:url,
                     data:{
@@ -40,10 +41,11 @@
                     success:function(data){
                         console.log(data);
                         let text = `
+                            <h2>${name}</h2>
                             <div>今日天氣${data.weather[0].description}</div>
-                            <div class="temp">目前溫度:${data.main.temp}</div>
-                            <div class="feels">體感溫度:${data.main.feels_like}</div>
-                            <div>最高溫:${data.main.temp_max}最低溫:${data.main.temp_min}</div>
+                            <div class="temp">目前溫度:${data.main.temp}&deg;C</div>
+                            <div class="feels">體感溫度:${data.main.feels_like}&deg;C</div>
+                            <div>最高溫:${data.main.temp_max}&deg;C,<br>最低溫:${data.main.temp_min}&deg;C</div>
                         `;
                         $('.container').append(text);
                     },
