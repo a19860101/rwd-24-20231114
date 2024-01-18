@@ -74,9 +74,27 @@
         section:nth-of-type(4){
             background-color: #ffc7fe;
         }
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: #fa0;
+            position: fixed;
+            right: 200px;
+            bottom: 200px;
+            z-index: 999;
+            animation: test linear;
+            animation-timeline: scroll();
+        }
+        @keyframes test {
+            to {
+                right: 400px;
+                transform: scale(4)rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="test"></div>
     <nav>
         <a href="#section-1">section 1</a>
         <a href="#section-2">section 2</a>
