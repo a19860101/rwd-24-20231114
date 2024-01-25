@@ -57,14 +57,14 @@
             // console.log(date.getSeconds())
 
             let url = 'https://api.openweathermap.org/data/2.5/forecast';
-            // $('#q').change(function(){
+            $('#q').change(function(){
                 $('.container').empty();
                 let q = $(this).val();
                 let name = $(this).find(':selected').text();
                 $.ajax({
                     url:url,
                     data:{
-                        q:'taipei',
+                        q:q,
                         appid:'b1ecbccd638b763d489602917ba47cc3',
                         units:'metric',
                         lang:'zh_tw',
@@ -84,7 +84,11 @@
                                 let y = myDate.getFullYear();
                                 let m = myDate.getMonth()+1;
                                 let d = myDate.getDate();
-                                let D = myDate.getDay();
+                                // let D = myDate.getDay();//0-6
+                                let D_array = ['日','一','二','三','四','五','六'];
+                                let D_array_jp = ['日','月','火','水','木','金','土'];
+                                let D = D_array[myDate.getDay()]
+                                // let D = 10;
                                 let H = myDate.getHours();
                                 let I = myDate.getMinutes();
                                 let S = myDate.getSeconds();
@@ -112,7 +116,7 @@
                     }
                 })
             })
-        // })
+        })
     </script>
 </body>
 </html>
