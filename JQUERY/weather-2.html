@@ -5,7 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width:1200px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-inline: auto;
+        }
+        .col {
+            flex:1 0 300px;
+            padding: 5px;
 
+        }
+        .item {
+            background-color: #ccc;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <select name="q" id="q">
@@ -44,7 +66,17 @@
                     for(w of data.list){
                         console.log(w.main.temp)
                             let content = `
-                            <div>${w.main.temp}</div>
+                            <div class="col">
+                            <div class="item">
+                            <div>
+                                <img src="https://openweathermap.org/img/wn/${w.weather[0].icon}@2x.png">
+                            </div>
+                            <div>天氣${w.weather[0].description}</div>
+                            <div class="temp">目前溫度:${w.main.temp}&deg;C</div>
+                            <div class="feels">體感溫度:${w.main.feels_like}&deg;C</div>
+                            <div>最高溫:${w.main.temp_max}&deg;C,<br>最低溫:${w.main.temp_min}&deg;C</div>
+                            </div>
+                            </div>
                         `;
                         $('.container').append(content);
                     }
