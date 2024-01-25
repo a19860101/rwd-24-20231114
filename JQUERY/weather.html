@@ -42,6 +42,9 @@
                         console.log(data);
                         let text = `
                             <h2>${name}</h2>
+                            <div>
+                                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+                            </div>
                             <div>今日天氣${data.weather[0].description}</div>
                             <div class="temp">目前溫度:${data.main.temp}&deg;C</div>
                             <div class="feels">體感溫度:${data.main.feels_like}&deg;C</div>
