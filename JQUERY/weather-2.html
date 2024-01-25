@@ -45,17 +45,17 @@
     </div>
     <script>
         $(function(){
-            let date = new Date(1706184000*1000);
+            // let date = new Date(1706184000*1000);
 
-            console.log(date);
-            console.log(date.getFullYear())
-            console.log(date.getMonth()+1)
-            console.log(date.getDate())
-            console.log(date.getDay())
-            console.log(date.getHours())
-            console.log(date.getMinutes())
-            console.log(date.getSeconds())
-            
+            // console.log(date);
+            // console.log(date.getFullYear())
+            // console.log(date.getMonth()+1)
+            // console.log(date.getDate())
+            // console.log(date.getDay())
+            // console.log(date.getHours())
+            // console.log(date.getMinutes())
+            // console.log(date.getSeconds())
+
             let url = 'https://api.openweathermap.org/data/2.5/forecast';
             // $('#q').change(function(){
                 $('.container').empty();
@@ -80,10 +80,20 @@
                         // })
                         for(w of data.list){
                             // console.log(w.main.temp)
+                                let myDate = new Date(w.dt*1000);
+                                let y = myDate.getFullYear();
+                                let m = myDate.getMonth()+1;
+                                let d = myDate.getDate();
+                                let D = myDate.getDay();
+                                let H = myDate.getHours();
+                                let I = myDate.getMinutes();
+                                let S = myDate.getSeconds();
+                                
                                 let content = `
                                 <div class="col">
                                 <div class="item">
-                                <div>${w.dt_txt}</div>
+                                <div>${y}年${m}月${d}日</div>
+                                <div>星期${D} ${H}時</div>
                                 <div>
                                     <img src="https://openweathermap.org/img/wn/${w.weather[0].icon}@2x.png">
                                 </div>
