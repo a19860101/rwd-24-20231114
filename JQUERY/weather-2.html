@@ -45,47 +45,64 @@
     </div>
     <script>
         $(function(){
+            let date = new Date(1706184000*1000);
+
+            console.log(date);
+            console.log(date.getFullYear())
+            console.log(date.getMonth()+1)
+            console.log(date.getDate())
+            console.log(date.getDay())
+            console.log(date.getHours())
+            console.log(date.getMinutes())
+            console.log(date.getSeconds())
+            
             let url = 'https://api.openweathermap.org/data/2.5/forecast';
-            $.ajax({
-                url:url,
-                data:{
-                    q:'taipei',
-                    appid:'b1ecbccd638b763d489602917ba47cc3',
-                    units:'metric',
-                    lang:'zh_tw',
-                },
-                success:function(data){
-                    console.log(data.list)
-                    // $(data.list).each(function(w){
-                    //     console.log(this.main.temp)
-                    //     let content = `
-                    //         <div>${this.main.temp}</div>
-                    //     `;
-                    //     $('.container').append(content);
-                    // })
-                    for(w of data.list){
-                        console.log(w.main.temp)
-                            let content = `
-                            <div class="col">
-                            <div class="item">
-                            <div>
-                                <img src="https://openweathermap.org/img/wn/${w.weather[0].icon}@2x.png">
-                            </div>
-                            <div>天氣${w.weather[0].description}</div>
-                            <div class="temp">目前溫度:${w.main.temp}&deg;C</div>
-                            <div class="feels">體感溫度:${w.main.feels_like}&deg;C</div>
-                            <div>最高溫:${w.main.temp_max}&deg;C,<br>最低溫:${w.main.temp_min}&deg;C</div>
-                            </div>
-                            </div>
-                        `;
-                        $('.container').append(content);
+            // $('#q').change(function(){
+                $('.container').empty();
+                let q = $(this).val();
+                let name = $(this).find(':selected').text();
+                $.ajax({
+                    url:url,
+                    data:{
+                        q:'taipei',
+                        appid:'b1ecbccd638b763d489602917ba47cc3',
+                        units:'metric',
+                        lang:'zh_tw',
+                    },
+                    success:function(data){
+                        console.log(data.list)
+                        // $(data.list).each(function(w){
+                        //     console.log(this.main.temp)
+                        //     let content = `
+                        //         <div>${this.main.temp}</div>
+                        //     `;
+                        //     $('.container').append(content);
+                        // })
+                        for(w of data.list){
+                            // console.log(w.main.temp)
+                                let content = `
+                                <div class="col">
+                                <div class="item">
+                                <div>${w.dt_txt}</div>
+                                <div>
+                                    <img src="https://openweathermap.org/img/wn/${w.weather[0].icon}@2x.png">
+                                </div>
+                                <div>天氣${w.weather[0].description}</div>
+                                <div class="temp">目前溫度:${w.main.temp}&deg;C</div>
+                                <div class="feels">體感溫度:${w.main.feels_like}&deg;C</div>
+                                <div>最高溫:${w.main.temp_max}&deg;C,<br>最低溫:${w.main.temp_min}&deg;C</div>
+                                </div>
+                                </div>
+                            `;
+                            $('.container').append(content);
+                        }
+                    },
+                    error:function(){
+                        alert('error');
                     }
-                },
-                error:function(){
-                    alert('error');
-                }
+                })
             })
-        })
+        // })
     </script>
 </body>
 </html>
