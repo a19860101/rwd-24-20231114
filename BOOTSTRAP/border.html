@@ -19,6 +19,11 @@
         border-4
         border-5
 
+        border-top-0
+        border-bottom-0
+        border-start-0
+        border-end-0
+
         rounded-0
         rounded-1
         rounded-2
@@ -26,11 +31,47 @@
         rounded-4
         rounded-5
 
+        rounded-circle
+        rounded-pill
+
+        border-opacity-10
+        border-opacity-25
+        border-opacity-50
+        border-opacity-75
+
+        圓角的方位與圓角的大小有衝突不可同時設定
+        ex: rounded-3 rounded-top 此時會有衝突
      -->
+    <div style="width:100px;height:100px" class="bg-success rounded-circle"></div>
+    <div style="width:300px;height:100px" class="bg-success rounded-pill"></div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-3">
-                <div class="p-3 border border-5 border-danger rounded-3">
+                <div class="p-3 border border-5 border-danger rounded-pill  border-opacity-75">
+                    <h2>title</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sapiente molestias enim tempora non, sunt atque aut deserunt iusto fuga.
+                    </p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-3  border-top border-5 border-danger">
+                    <h2>title</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sapiente molestias enim tempora non, sunt atque aut deserunt iusto fuga.
+                    </p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-3  border-end border-5 border-danger">
+                    <h2>title</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sapiente molestias enim tempora non, sunt atque aut deserunt iusto fuga.
+                    </p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-3 border border-bottom-0 border-5 border-danger">
                     <h2>title</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sapiente molestias enim tempora non, sunt atque aut deserunt iusto fuga.
