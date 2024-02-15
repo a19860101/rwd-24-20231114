@@ -5,20 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme:{
+                extend:{
+                    colors:{
+                        'primary':{
+                            100:'#098',
+                            500:'#908'
+                        },
+                    }
+                },
+                screens: {
+                    'sm':'640px',
+                    'md':'768px',
+                    'lg':'1024px',
+                    'xl':'1200px',
+                    // 'xxl':'768px',
+                },
+                container:{
+                    center:true,
+                    padding:'2rem'
+                }
+            }
+        }
+    </script>
     <style type="text/tailwindcss">
         .btn {
             @apply inline-block px-6 py-2 rounded-2xl bg-amber-300 hover:bg-amber-100 duration-300 outline outline-amber-300;
         }
         .myContainer {
-            @apply container flex flex-wrap mx-auto
+            @apply container flex flex-wrap
         }
         .cover {
             @apply w-full h-full object-cover
         }
     </style>
+    
 </head>
 <body>
-    <nav class="flex py-5 px-3 bg-amber-400">
+    <nav class="flex py-5 px-3 bg-amber-500">
         <a href="#" class="font-bold uppercase">Logo</a>
         <div class="ml-auto space-x-3 *:capitalize *:text-sm hover:*:text-white *:duration-300">
             <a href="#" class="hover:text-white duration-300">about</a>
@@ -37,7 +63,7 @@
         </div>
     </header>
     <section class="py-24 bg-amber-50">
-        <div class="container flex flex-wrap mx-auto py-4">
+        <div class="myContainer flex flex-wrap mx-auto py-4">
             <div class="lg:w-1/4 sm:w-1/2 sm:p-2 p-4">
                 <div class="border border-amber-600 border-2 rounded-xl overflow-hidden">
                     <div class="aspect-[4/3]">
@@ -257,7 +283,7 @@
         </div>
     </section>
     <footer class="px-3 py-6 bg-zinc-900 text-zinc-100 text-sm flex justify-between">
-        <div>
+        <div>ｚｚ
             Copyrights&copy;2024.All Rights Reserved
         </div>
         <div>
