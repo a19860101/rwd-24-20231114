@@ -237,16 +237,21 @@
     </section>
     <section class="py-24 bg-amber-50">
         <div class="myContainer">
-            <div class="w-1/2 mx-auto">
+            <div class="sm:w-1/2 w-2/3 mx-auto">
                 <form action="">
                     <div class="space-y-2 mb-3">
                         <label for="">姓名</label>
-                        <input type="text" class="border border-black w-full p-2 rounded-lg focus:outline-sky-400">
+                        <input type="text" class="border border-zinc-600 w-full p-2 rounded-lg focus:outline-sky-400 duration-300">
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-2 mb-3">
                         <label for="">電話</label>
-                        <input type="text" class="border border-black w-full p-2 rounded-lg focus:outline-sky-400">
+                        <input type="text" class="border border-zinc-600 w-full p-2 rounded-lg focus:outline-sky-400">
                     </div>
+                    <div class="space-y-2 mb-3">
+                        <label for="">內容</label>
+                        <textarea class="border border-zinc-600 w-full p-2 rounded-lg focus:outline-sky-400" rows="10"></textarea>
+                    </div>
+                    <input type="submit" value="送出" class="px-6 py-2 rounded-xl bg-amber-300 text-sm cursor-pointer hover:bg-rose-400 duration-500">
                 </form>
             </div>
         </div>
